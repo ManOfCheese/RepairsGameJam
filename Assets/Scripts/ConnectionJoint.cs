@@ -11,6 +11,7 @@ public class ConnectionJoint : MonoBehaviour {
 
 	public Rigidbody rigidBody;
 	public ConnectionType connectionType;
+	public Rigidbody attachedToStick;
 	public GameObject fixedStick; //stick prefab
 	public GameObject hingeStick; //stick prefab
 
@@ -18,9 +19,11 @@ public class ConnectionJoint : MonoBehaviour {
 		GameObject newStick = null;
 		if ( connectionType == ConnectionType.Fixed ) {
 			newStick = Instantiate( fixedStick );
+			newStick.GetComponent<FixedJoint>().connectedBody = attachedToStick;
 		}
 		else if ( connectionType == ConnectionType.Hinge ) {
 			newStick = Instantiate( hingeStick );
+			newStick.GetComponent<HingeJoint>().connectedBody = attachedToStick;
 		}
 		if (newStick != null){
 			float halfObjectLength = newStick.GetComponent<MeshRenderer>().bounds.extents.y + 0.5f;
