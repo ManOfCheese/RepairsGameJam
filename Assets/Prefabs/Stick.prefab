@@ -234,7 +234,7 @@ MonoBehaviour:
   stick: {fileID: 1878951194496242006}
   endItemPrefab: {fileID: 8365719098395412596, guid: 43e2fb1e45d812c488ef58b650fa6f85,
     type: 3}
-  arrows: {fileID: 1715453870631441512}
+  arrows: {fileID: 6248157451068640625}
 --- !u!1 &5725125534136679466
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +531,12 @@ PrefabInstance:
       objectReference: {fileID: 7592343332235723591}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abea19064e93edb4887c7f3c31c092e2, type: 3}
+--- !u!1 &6248157451068640625 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2664991109126611305, guid: abea19064e93edb4887c7f3c31c092e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8236548615979985944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4694824408833774377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3704567756925321009, guid: abea19064e93edb4887c7f3c31c092e2,
