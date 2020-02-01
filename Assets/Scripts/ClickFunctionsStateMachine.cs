@@ -6,10 +6,9 @@ using UnityEngine.UI;
 public class ClickFunctionsStateMachine : MonoBehaviour
 {
     #region Variables
-    public Color NoFunctionColor = Color.white;
     public Color PlaceStickColor = Color.white;
-    public Color PlaceJointColor = Color.white;
-    public Color PlaceEndPartColor = Color.white;
+    public Color ToggleJointColor = Color.white;
+    public Color ToggleEndPartColor = Color.white;
     public Color DeleteColor = Color.white;
     public Image ControlsBackground;
     #endregion
@@ -17,11 +16,9 @@ public class ClickFunctionsStateMachine : MonoBehaviour
     #region States
     public enum States
     {
-        NoFunction,
         PlaceStick,
-        PlaceJoint,
-        PlaceEndPart,
-        Delete
+        ToggleJoint,
+        ToggleEndPart
     }
 
     [Header("States")]
@@ -35,20 +32,14 @@ public class ClickFunctionsStateMachine : MonoBehaviour
         }
         switch (CurrentState)
         {
-            case States.NoFunction:
-                ControlsBackground.color = NoFunctionColor;
-                break;
-            case States.PlaceJoint:
-                ControlsBackground.color = PlaceJointColor;
-                break;
             case States.PlaceStick:
                 ControlsBackground.color = PlaceStickColor;
                 break;
-            case States.PlaceEndPart:
-                ControlsBackground.color = PlaceEndPartColor;
+            case States.ToggleJoint:
+                ControlsBackground.color = ToggleJointColor;
                 break;
-            case States.Delete:
-                ControlsBackground.color = DeleteColor;
+            case States.ToggleEndPart:
+                ControlsBackground.color = ToggleEndPartColor;
                 break;
             default:
                 Debug.LogError("Unknown state");
@@ -61,57 +52,86 @@ public class ClickFunctionsStateMachine : MonoBehaviour
         SetState((States)pNewState);
     }
 
-    public void NoFunction()
-    {
-
-    }
-
     public void PlaceStick()
     {
+		if ( Input.GetMouseButtonDown( 0 ) ) {
+            Debug.Log("Place stick");
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
+			if ( Physics.Raycast( ray, out hit, 100.0f ) ) {
+				if ( hit.transform.gameObject.GetComponent<DirectionalArrow>() ) {
+					hit.transform.gameObject.GetComponent<DirectionalArrow>().OnClick();
+				}
+			}
+		}
+	}
 
-    }
-
-    public void PlaceJoint()
+    public void ToggleJoint()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Toggle joint");
+            // Functionality!
+        }
+	}
 
-    }
-
-    public void PlaceEndPart()
+    public void ToggleEndPart()
     {
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Toggle end part");
+            // Functionality!
+        }
     }
 
+    #endregion
     public void Delete()
     {
-
+        Debug.Log("Delete");
+        // Functionality!
     }
-    #endregion
 
     #region Unity Functions
     void Start()
     {
-        SetState(States.NoFunction);
+        SetState(States.PlaceStick);
     }
 
     void Update()
     {
         Debug.Log(CurrentState);
+        if (Input.GetMouseButtonDown(1))
+        {
+            Delete();
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SetState(States.PlaceStick);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SetState(States.ToggleJoint);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SetState(States.ToggleEndPart);
+            return;
+        }
+
         switch (CurrentState)
         {
-            case States.NoFunction:
-                NoFunction();
-                break;
-            case States.PlaceJoint:
-                PlaceJoint();
-                break;
             case States.PlaceStick:
                 PlaceStick();
                 break;
-            case States.PlaceEndPart:
-                PlaceEndPart();
+            case States.ToggleJoint:
+                ToggleJoint();
                 break;
-            case States.Delete:
-                Delete();
+            case States.ToggleEndPart:
+                ToggleEndPart();
                 break;
             default:
                 Debug.LogError("Unknown state");
