@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c1d1dc308a31240888b367ba34ae9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jointOffset: 1
   jointPrefab: {fileID: 5163698669083173873, guid: 98f9eb28d664b004c976018030bfb3f6,
     type: 3}
 --- !u!54 &54164879937432848

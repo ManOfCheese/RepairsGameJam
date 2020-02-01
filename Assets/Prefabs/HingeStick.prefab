@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5725125534136679470}
   - component: {fileID: 5725125534136679469}
   - component: {fileID: 5725125534136679468}
+  - component: {fileID: 2374197960474784705}
   - component: {fileID: 5163079103581812078}
   m_Layer: 0
   m_Name: HingeStick
@@ -112,6 +113,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2374197960474784705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5725125534136679466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908b94e81dca8924ea186bf39fd8961f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottomEndPoint: {fileID: 6422163732581322675}
+  topEndPoint: {fileID: 7484260531762529634}
 --- !u!59 &5163079103581812078
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -212,7 +227,7 @@ PrefabInstance:
     - target: {fileID: 8676762169913873581, guid: 07d84e5eeaf0b934989f40ab5ff3d77a,
         type: 3}
       propertyPath: m_Name
-      value: StickEndPoint
+      value: TopEndPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07d84e5eeaf0b934989f40ab5ff3d77a, type: 3}
@@ -222,6 +237,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2285403587216216526}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7484260531762529634 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8676762169913873580, guid: 07d84e5eeaf0b934989f40ab5ff3d77a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2285403587216216526}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c1d1dc308a31240888b367ba34ae9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2398754882919832351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -287,7 +314,7 @@ PrefabInstance:
     - target: {fileID: 8676762169913873581, guid: 07d84e5eeaf0b934989f40ab5ff3d77a,
         type: 3}
       propertyPath: m_Name
-      value: StickEndPoint (1)
+      value: BottomEndPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07d84e5eeaf0b934989f40ab5ff3d77a, type: 3}
@@ -297,3 +324,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2398754882919832351}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6422163732581322675 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8676762169913873580, guid: 07d84e5eeaf0b934989f40ab5ff3d77a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2398754882919832351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c1d1dc308a31240888b367ba34ae9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

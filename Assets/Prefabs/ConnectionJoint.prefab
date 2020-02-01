@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5163698669083173872}
   - component: {fileID: 7870212526876514227}
   m_Layer: 0
-  m_Name: ConnectionPoint
+  m_Name: ConnectionJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfcae78239ec15d41957b0872e83dd63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connector: {fileID: 0}
+  connectionOffset: 1
+  connectionType: 0
+  attachedToStick: {fileID: 0}
   fixedStick: {fileID: 5725125534136679466, guid: ee460a32912ff0748b83810f97071d55,
     type: 3}
   hingeStick: {fileID: 5725125534136679466, guid: 65c56dab06f052a438ba2052b16d082d,
