@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3704567756925321009}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5175144372647726816
 MeshFilter:
@@ -104,14 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a336cae5440ced4cb3c12a39e0f6d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stick: {fileID: 0}
-  fixedJointPrefab: {fileID: 5163698669083173873, guid: 98f9eb28d664b004c976018030bfb3f6,
-    type: 3}
-  hingeJointPrefab: {fileID: 5163698669083173873, guid: ec98eeca16c33434aadd811aecad0e70,
-    type: 3}
-  stickPrefab: {fileID: 5725125534136679466, guid: ee460a32912ff0748b83810f97071d55,
-    type: 3}
-  isAnchorPoint: 0
+  attachable: {fileID: 0}
 --- !u!1 &1932460182066063355
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3171780042802054532
 Transform:
   m_ObjectHideFlags: 0
@@ -216,14 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a336cae5440ced4cb3c12a39e0f6d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stick: {fileID: 0}
-  fixedJointPrefab: {fileID: 5163698669083173873, guid: 98f9eb28d664b004c976018030bfb3f6,
-    type: 3}
-  hingeJointPrefab: {fileID: 5163698669083173873, guid: ec98eeca16c33434aadd811aecad0e70,
-    type: 3}
-  stickPrefab: {fileID: 5725125534136679466, guid: ee460a32912ff0748b83810f97071d55,
-    type: 3}
-  isAnchorPoint: 0
+  attachable: {fileID: 0}
 --- !u!1 &2664991109126611305
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,8 +240,8 @@ Transform:
   - {fileID: 7382028631155663772}
   - {fileID: 3171780042802054532}
   - {fileID: 5586198067589426127}
-  - {fileID: 5157291610518550806}
   - {fileID: 2497466048894529783}
+  - {fileID: 5157291610518550806}
   - {fileID: 5111313733683451615}
   - {fileID: 4504758452541416289}
   - {fileID: 8660447623578131215}
@@ -281,7 +267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5111313733683451615
 Transform:
   m_ObjectHideFlags: 0
@@ -366,14 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a336cae5440ced4cb3c12a39e0f6d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stick: {fileID: 0}
-  fixedJointPrefab: {fileID: 5163698669083173873, guid: 98f9eb28d664b004c976018030bfb3f6,
-    type: 3}
-  hingeJointPrefab: {fileID: 5163698669083173873, guid: ec98eeca16c33434aadd811aecad0e70,
-    type: 3}
-  stickPrefab: {fileID: 5725125534136679466, guid: ee460a32912ff0748b83810f97071d55,
-    type: 3}
-  isAnchorPoint: 0
+  attachable: {fileID: 0}
 --- !u!1 &5407117823291632436
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8660447623578131215
 Transform:
   m_ObjectHideFlags: 0
@@ -478,14 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a336cae5440ced4cb3c12a39e0f6d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stick: {fileID: 0}
-  fixedJointPrefab: {fileID: 5163698669083173873, guid: 98f9eb28d664b004c976018030bfb3f6,
-    type: 3}
-  hingeJointPrefab: {fileID: 5163698669083173873, guid: ec98eeca16c33434aadd811aecad0e70,
-    type: 3}
-  stickPrefab: {fileID: 5725125534136679466, guid: ee460a32912ff0748b83810f97071d55,
-    type: 3}
-  isAnchorPoint: 0
+  attachable: {fileID: 0}
 --- !u!1 &6682816211581567763
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2497466048894529783
 Transform:
   m_ObjectHideFlags: 0
@@ -518,7 +490,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3704567756925321009}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!33 &569719782439945450
 MeshFilter:
@@ -590,14 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a336cae5440ced4cb3c12a39e0f6d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stick: {fileID: 0}
-  fixedJointPrefab: {fileID: 5163698669083173873, guid: 98f9eb28d664b004c976018030bfb3f6,
-    type: 3}
-  hingeJointPrefab: {fileID: 5163698669083173873, guid: ec98eeca16c33434aadd811aecad0e70,
-    type: 3}
-  stickPrefab: {fileID: 5725125534136679466, guid: ee460a32912ff0748b83810f97071d55,
-    type: 3}
-  isAnchorPoint: 0
+  attachable: {fileID: 0}
 --- !u!1 &7208967497488492594
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,14 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a336cae5440ced4cb3c12a39e0f6d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stick: {fileID: 0}
-  fixedJointPrefab: {fileID: 5163698669083173873, guid: 98f9eb28d664b004c976018030bfb3f6,
-    type: 3}
-  hingeJointPrefab: {fileID: 5163698669083173873, guid: ec98eeca16c33434aadd811aecad0e70,
-    type: 3}
-  stickPrefab: {fileID: 5725125534136679466, guid: ee460a32912ff0748b83810f97071d55,
-    type: 3}
-  isAnchorPoint: 0
+  attachable: {fileID: 0}
 --- !u!1 &8086703545649185703
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,14 +772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a336cae5440ced4cb3c12a39e0f6d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stick: {fileID: 0}
-  fixedJointPrefab: {fileID: 5163698669083173873, guid: 98f9eb28d664b004c976018030bfb3f6,
-    type: 3}
-  hingeJointPrefab: {fileID: 5163698669083173873, guid: ec98eeca16c33434aadd811aecad0e70,
-    type: 3}
-  stickPrefab: {fileID: 5725125534136679466, guid: ee460a32912ff0748b83810f97071d55,
-    type: 3}
-  isAnchorPoint: 0
+  attachable: {fileID: 0}
 --- !u!1 &8504634174549357729
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,11 +877,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a336cae5440ced4cb3c12a39e0f6d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stick: {fileID: 0}
-  fixedJointPrefab: {fileID: 5163698669083173873, guid: 98f9eb28d664b004c976018030bfb3f6,
-    type: 3}
-  hingeJointPrefab: {fileID: 5163698669083173873, guid: ec98eeca16c33434aadd811aecad0e70,
-    type: 3}
-  stickPrefab: {fileID: 5725125534136679466, guid: ee460a32912ff0748b83810f97071d55,
-    type: 3}
-  isAnchorPoint: 0
+  attachable: {fileID: 0}
