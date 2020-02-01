@@ -10,7 +10,8 @@ public class EndItem : MonoBehaviour {
 	private float jointOffset = 1f;
 
 	private void Start() {
-		GetComponent<FixedJoint>().connectedBody = attachedToStick;
+        if (GetComponent<FixedJoint>() != null)
+            GetComponent<FixedJoint>().connectedBody = attachedToStick;
 	}
 
 	public void ToggleJoint() {

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4030265020602071374}
   - component: {fileID: 4030265020602071377}
+  - component: {fileID: 4394628727297613365}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -43,9 +44,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12a94999cbdb3540a44b13e41d8874c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoFunctionColor: {r: 1, g: 1, b: 1, a: 1}
   PlaceStickColor: {r: 0.3160377, g: 0.752723, b: 1, a: 1}
-  PlaceJointColor: {r: 0.39964816, g: 1, b: 0.3915094, a: 1}
-  PlaceEndPartColor: {r: 0.93392265, g: 0.9433962, b: 0.36044857, a: 1}
+  ToggleJointColor: {r: 1, g: 1, b: 1, a: 1}
+  ToggleEndPartColor: {r: 1, g: 1, b: 1, a: 1}
   DeleteColor: {r: 0.9622642, g: 0.22241013, b: 0.22241013, a: 1}
+  ControlsBackground: {fileID: 0}
   CurrentState: 0
+--- !u!114 &4394628727297613365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030265020602071376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06768e4154032c45bafd7251d2d54d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Levels: {fileID: 11400000, guid: cdd5463903731344b81caa622d6f2f5c, type: 2}
+  LevelSelect: 1
+  CurrentLevel:
+    LevelName: Level 1
+    StickRequirement: 3
+    EndItemRequirement: 2
+    JointRequirement: 0
+  StickReqMet: 0
+  EndItemReqMet: 0
+  ConnectionJointReqMet: 0
+  Sticks: []
+  EndItems: []
+  ConnectionJoints: []
