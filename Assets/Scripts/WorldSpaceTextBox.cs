@@ -81,10 +81,10 @@ public class WorldSpaceTextBox : MonoBehaviour
         }
         TextScaleFinal = TextScale * TextScaleMultiplier;
 
-        WorldSpaceCanvas.GetComponent<RectTransform>().sizeDelta = CanvasHolder.transform.localScale / TextScaleFinal;
+        WorldSpaceCanvas.GetComponent<RectTransform>().sizeDelta = CanvasHolder.transform.lossyScale / TextScaleFinal;
         Vector3 newScale = Vector3.one;
-        newScale.x = Mathf.Pow(CanvasHolder.transform.localScale.x, -1) * TextScaleFinal;
-        newScale.y = Mathf.Pow(CanvasHolder.transform.localScale.y, -1) * TextScaleFinal;
+        newScale.x = Mathf.Pow(CanvasHolder.transform.lossyScale.x, -1) * TextScaleFinal;
+        newScale.y = Mathf.Pow(CanvasHolder.transform.lossyScale.y, -1) * TextScaleFinal;
         WorldSpaceCanvas.transform.localScale = newScale;
     }
 

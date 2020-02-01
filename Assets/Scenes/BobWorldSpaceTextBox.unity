@@ -446,9 +446,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasHolder: {fileID: 1751124059}
   WorldSpaceCanvas: {fileID: 1016064487532345772}
-  TextScale: 5.6
+  TextScale: 2.4
   TextScaleMultiplier: 0.1
-  TextScaleFinal: 0.56
+  TextScaleFinal: 0.24000001
   Rotate: 1
   time: 0
   rotationX: 0
@@ -565,22 +565,22 @@ PrefabInstance:
     - target: {fileID: 8990083799070702955, guid: 02aace480e3a6d24aaf9e8ea65a3f244,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.068342626
+      value: 0.051749922
       objectReference: {fileID: 0}
     - target: {fileID: 8990083799070702955, guid: 02aace480e3a6d24aaf9e8ea65a3f244,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.17314115
+      value: 0.1440972
       objectReference: {fileID: 0}
     - target: {fileID: 8990083799070702955, guid: 02aace480e3a6d24aaf9e8ea65a3f244,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 14.632157
+      value: 19.3237
       objectReference: {fileID: 0}
     - target: {fileID: 8990083799070702955, guid: 02aace480e3a6d24aaf9e8ea65a3f244,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 5.775635
+      value: 6.93976
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7931442460450412552, guid: 02aace480e3a6d24aaf9e8ea65a3f244, type: 3}
