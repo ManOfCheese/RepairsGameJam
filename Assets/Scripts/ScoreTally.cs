@@ -59,12 +59,14 @@ public class ScoreTally : MonoBehaviour
     public void AddStick(GameObject stick)
     {
         Sticks.Add(stick);
-        CheckStickRequirementMet();
+        //CheckStickRequirementMet();
+        CheckAllRequirements();
     }
     public void RemoveStick(GameObject stick)
     {
         Sticks.Remove(stick);
-        CheckStickRequirementMet();
+        //CheckStickRequirementMet();
+        CheckAllRequirements();
     }
     public bool CheckStickRequirementMet()
     {
@@ -75,12 +77,14 @@ public class ScoreTally : MonoBehaviour
     public void AddEndItem(EndItem endItem)
     {
         EndItems.Add(endItem);
-        CheckEndItemRequirementMet();
+        //CheckEndItemRequirementMet();
+        CheckAllRequirements();
     }
     public void RemoveEndItem(EndItem endItem)
     {
         EndItems.Remove(endItem);
-        CheckEndItemRequirementMet();
+        //CheckEndItemRequirementMet();
+        CheckAllRequirements();
     }
     public bool CheckEndItemRequirementMet()
     {
@@ -91,21 +95,28 @@ public class ScoreTally : MonoBehaviour
     public void AddConnectionJoint(ConnectionJoint connectionJoint)
     {
         ConnectionJoints.Add(connectionJoint);
-        CheckConnectionJointRequirementMet();
+        //CheckConnectionJointRequirementMet();
+        CheckAllRequirements();
     }
     public void RemoveConnectionJoint(ConnectionJoint connectionJoint)
     {
         ConnectionJoints.Remove(connectionJoint);
-        CheckConnectionJointRequirementMet();
+        //CheckConnectionJointRequirementMet();
+        CheckAllRequirements();
     }
     public bool CheckConnectionJointRequirementMet()
     {
+        Debug.Log("Check joint requirements");
         return ConnectionJointReqMet = ConnectionJoints.Count >= CurrentLevel.JointRequirement;
     }
 
     public bool CheckAllRequirements()
     {
-        LevelComplete = CheckStickRequirementMet() && CheckEndItemRequirementMet() && CheckConnectionJointRequirementMet();
+        Debug.Log("Hello?");
+        CheckStickRequirementMet();
+        CheckEndItemRequirementMet();
+        CheckConnectionJointRequirementMet();
+        LevelComplete = StickReqMet && EndItemReqMet && ConnectionJointReqMet;
         return LevelComplete;
     }
 
@@ -113,11 +124,6 @@ public class ScoreTally : MonoBehaviour
     private void Start()
     {
         CheckAllRequirements();
-    }
-
-    private void Update()
-    {
-        
     }
 
     #endregion
