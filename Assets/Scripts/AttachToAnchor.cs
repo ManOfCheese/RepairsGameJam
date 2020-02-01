@@ -31,5 +31,4 @@ public class AttachToAnchor : AAttachable {
 		}
 		base.Attach( arrow, arrowTransform );
 	}
-
 }

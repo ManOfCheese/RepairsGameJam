@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndItem : MonoBehaviour {
+public class EndItem : ADeletable {
 
 	public Rigidbody attachedToStick;
+
 	public GameObject jointPrefab;
 
 	private float jointOffset = 1f;
@@ -19,4 +20,9 @@ public class EndItem : MonoBehaviour {
 		Jonko connectionJoint = jointPrefab.GetComponent<Jonko>();
 	}
 
+	public override void Delete() {
+		if ( !GetComponent<Joint>() ) {
+			Destroy( this.gameObject );
+		}
+	}
 }

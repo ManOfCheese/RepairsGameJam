@@ -18,18 +18,14 @@ public class AttachToStick : AAttachable {
 
 	public override void Attach( DirectionalArrow arrow, Transform arrowTransform ) {
 		GameObject newStickAndJoint = Instantiate( stickPrefab );
-		//float halfStickLength = newStickAndJoint.GetComponent<AttachToStick>().stick.GetComponent<MeshRenderer>().bounds.extents.y;
-		//float jointDiameter = newStickAndJoint.GetComponent<AttachToStick>().GetComponentInChildren<Jonko>().GetComponent<MeshRenderer>().bounds.extents.y * 2;
-		//float totalDistanceBetweenCenters = jointDiameter + jointOffset;
 
 		newStickAndJoint.transform.rotation = arrow.gameObject.transform.rotation;
 		Vector3 normalizedDir = ( arrowTransform.position - transform.position ).normalized;
 		Vector3 dir1or0 = new Vector3( Mathf.RoundToInt( normalizedDir.x ), Mathf.RoundToInt( normalizedDir.y ), 0 );
-		Debug.Log( "arrowTransform: " + arrowTransform.position + " - transform.position " + transform.position + " | normalized = " + ( arrowTransform.position - transform.position ).normalized + " | Round to ints " + new Vector3( Mathf.RoundToInt( normalizedDir.x ), Mathf.RoundToInt( normalizedDir.y ), 0 ) + " * " + jointOffset );
 		newStickAndJoint.transform.position = stick.transform.position + ( dir1or0 * jointOffset );
 
 		stick.AddFixedJoint();
-		stick.ConnectRigidBody( newStickAndJoint.GetComponentInChildren<HingeJoint>().GetComponent<Rigidbody>() );
+		stick.ConnectRigidBody( newStickAndJoint.transform.Find("HingeJoint").GetComponent<Rigidbody>() );
 		base.Attach( arrow, arrowTransform );
 		Destroy( createEndItem );
 	}

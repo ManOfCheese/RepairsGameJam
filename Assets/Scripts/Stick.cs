@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stick : MonoBehaviour {
+public class Stick : ADeletable {
 
 	private FixedJoint fixedJoint;
 	private bool hasFixedJoint;
@@ -17,5 +17,23 @@ public class Stick : MonoBehaviour {
 			fixedJoint.connectedBody = rigidBody;
 		}
 	}
-    
+
+	public override void Delete() {
+		if ( !GetComponent<Joint>() ) {
+			Destroy( transform.parent.gameObject );
+		}
+	}
+
+	private void Update() {
+		if ( GetComponent<FixedJoint>() ) {
+			if ( GetComponent<FixedJoint>().connectedBody == null ) {
+				Destroy( GetComponent<FixedJoint>() );
+			}
+		}
+		if ( GetComponent<HingeJoint>() ) {
+			if ( GetComponent<HingeJoint>().connectedBody == null ) {
+				Destroy( GetComponent<HingeJoint>() );
+			}
+		}
+	}
 }
