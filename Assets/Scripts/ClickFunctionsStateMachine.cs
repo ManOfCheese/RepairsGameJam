@@ -74,11 +74,8 @@ public class ClickFunctionsStateMachine : MonoBehaviour
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
 			if ( Physics.Raycast( ray, out hit, 100.0f ) ) {
-				if ( hit.transform.gameObject.GetComponent<ConnectionJoint>() ) {
-					hit.transform.gameObject.GetComponent<ConnectionJoint>().ToggleJoint();
-				}
-				if ( hit.transform.gameObject.GetComponent<EndItem>() ) {
-					hit.transform.gameObject.GetComponent<EndItem>().ToggleJoint();
+				if ( hit.transform.gameObject.GetComponent<Joint>() ) {
+					hit.transform.gameObject.GetComponent<Joint>().ToggleJoint();
 				}
 			}
 		}
@@ -92,8 +89,8 @@ public class ClickFunctionsStateMachine : MonoBehaviour
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
 			if ( Physics.Raycast( ray, out hit, 100.0f ) ) {
-				if ( hit.transform.gameObject.GetComponent<ConnectionJoint>() ) {
-					hit.transform.gameObject.GetComponent<ConnectionJoint>().CreateEndItem();
+				if ( hit.transform.gameObject.GetComponent<CreateEndItem>() ) {
+					hit.transform.gameObject.GetComponent<CreateEndItem>().OnClick();
 				}
 			}
 		}
@@ -120,7 +117,6 @@ public class ClickFunctionsStateMachine : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(CurrentState);
         if (Input.GetMouseButtonDown(1))
         {
             Delete();

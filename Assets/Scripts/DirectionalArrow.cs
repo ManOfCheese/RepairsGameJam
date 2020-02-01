@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class DirectionalArrow : AClickable {
 
-	private ConnectionJoint connectionPoint;
-
-	private void Start() {
-		connectionPoint = GetComponentInParent<ConnectionJoint>();
-	}
+	public AAttachable attachable;
 
 	public override void OnClick() {
-		base.OnClick();
-		connectionPoint.CreateNewStick( transform );
+		attachable.Attach( transform );
 	}
 }
