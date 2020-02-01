@@ -27,6 +27,6 @@ public class AttachToStick : AAttachable {
 		stick.AddFixedJoint();
 		stick.ConnectRigidBody( newStickAndJoint.transform.Find("HingeJoint").GetComponent<Rigidbody>() );
 		base.Attach( arrow, arrowTransform );
-		Destroy( createEndItem );
+		createEndItem.SetActive(false);
 	}
 }

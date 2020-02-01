@@ -130,11 +130,6 @@ public class ClickFunctionsStateMachine : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SetState(States.ToggleJoint);
-            return;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
             SetState(States.ToggleEndPart);
             return;
         }

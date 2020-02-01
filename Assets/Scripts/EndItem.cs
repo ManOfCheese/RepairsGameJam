@@ -7,6 +7,7 @@ public class EndItem : ADeletable {
 	public Rigidbody attachedToStick;
 
 	public GameObject jointPrefab;
+	public GameObject arrows;
 
 	private float jointOffset = 1f;
 
@@ -22,6 +23,7 @@ public class EndItem : ADeletable {
 
 	public override void Delete() {
 		if ( !GetComponent<Joint>() ) {
+			arrows.SetActive( true );
 			Destroy( this.gameObject );
 		}
 	}

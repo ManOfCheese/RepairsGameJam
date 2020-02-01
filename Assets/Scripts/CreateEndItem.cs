@@ -25,6 +25,7 @@ public class CreateEndItem : AClickable {
 		stick.ConnectRigidBody( newEndItem.GetComponent<Rigidbody>() );
 		newEndItem.GetComponent<EndItem>().attachedToStick = stick.GetComponent<Rigidbody>();
 		arrows.SetActive( false );
+		newEndItem.GetComponent<EndItem>().arrows = arrows;
 	}
 
 }

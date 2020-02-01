@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttachToAnchor : AAttachable {
 
 	public GameObject anchor;
+	public List<DirectionalArrow> arrows;
 
 	//Prefabs
 	public GameObject fixedJointPrefab;
@@ -30,5 +31,26 @@ public class AttachToAnchor : AAttachable {
 			anchor.GetComponent<HingeJoint>().connectedAnchor = new Vector3( 0, 2, 0 );
 		}
 		base.Attach( arrow, arrowTransform );
+	}
+
+	private void Update() {
+		if ( GetComponentInChildren<FixedJoint>() ) {
+			if ( GetComponentInChildren<FixedJoint>().connectedBody == null ) {
+				foreach ( DirectionalArrow arrow in arrows ) {
+					if ( Physics.OverlapBox( arrow.transform.position, new Vector3( 0.2f, 0.2f, 0.2f ) ).Length <= 0 ) {
+						arrow.gameObject.SetActive( true );
+					}
+				}
+			}
+		}
+		if ( GetComponentInChildren<HingeJoint>() ) {
+			if ( GetComponentInChildren<HingeJoint>().connectedBody == null ) {
+				foreach ( DirectionalArrow arrow in arrows ) {
+					if ( Physics.OverlapBox( arrow.transform.position, new Vector3( 0.1f, 0.1f, 0.1f ) ).Length <= 0 ) {
+						arrow.gameObject.SetActive( true );
+					}
+				}
+			}
+		}
 	}
 }
