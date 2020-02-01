@@ -68,13 +68,21 @@ public class ClickFunctionsStateMachine : MonoBehaviour
 
     public void PlaceStick()
     {
-
-    }
+		if ( Input.GetMouseButtonDown( 0 ) ) {
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
+			if ( Physics.Raycast( ray, out hit, 100.0f ) ) {
+				if ( hit.transform.gameObject.GetComponent<DirectionalArrow>() ) {
+					hit.transform.gameObject.GetComponent<DirectionalArrow>().OnClick();
+				}
+			}
+		}
+	}
 
     public void PlaceJoint()
     {
 
-    }
+	}
 
     public void PlaceEndPart()
     {
@@ -83,7 +91,7 @@ public class ClickFunctionsStateMachine : MonoBehaviour
 
     public void Delete()
     {
-
+		
     }
     #endregion
 
