@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 4670715480985451009}
   - component: {fileID: 4670715480986581185}
   m_Layer: 0
-  m_Name: Check_checked 1
+  m_Name: Check_checked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 4670715480985451011}
   - component: {fileID: 4670715480986581187}
   m_Layer: 0
-  m_Name: Check_checked 2
+  m_Name: Check_checked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 4670715480985451017}
   - component: {fileID: 4670715480986581193}
   m_Layer: 0
-  m_Name: Check_unchecked 2
+  m_Name: Check_unchecked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 4670715480985451023}
   - component: {fileID: 4670715480986581199}
   m_Layer: 0
-  m_Name: Check_unchecked 1
+  m_Name: Check_unchecked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,7 +839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4670715480988351029}
   m_Layer: 0
-  m_Name: Checkmark1
+  m_Name: Checkmark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -871,7 +871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4670715480988351031}
   m_Layer: 0
-  m_Name: Checkmark2
+  m_Name: Checkmark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1227,7 +1227,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4670715480988575333}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.1385, y: 0, z: 3.2567}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
