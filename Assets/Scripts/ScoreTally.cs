@@ -122,13 +122,13 @@ public class ScoreTally : MonoBehaviour
     }
 
     [SerializeField] private List<Jonko> Joints;
-    public void AddConnectionJoint( Jonko connectionJoint )
+    public void AddConnectionJoint(Jonko connectionJoint)
     {
         Joints.Add(connectionJoint);
         //CheckConnectionJointRequirementMet();
         CheckAllRequirements();
     }
-    public void RemoveConnectionJoint( Jonko connectionJoint )
+    public void RemoveConnectionJoint(Jonko connectionJoint)
     {
         Joints.Remove(connectionJoint);
         //CheckConnectionJointRequirementMet();
@@ -174,7 +174,7 @@ public class ScoreTally : MonoBehaviour
         return LevelComplete;
     }
     #endregion
-
+     
     #region Progress UI
     [Header("Progress UI")]
     public Image ProgressRect;

@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3980676056072136010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3980676056072136020}
+  - component: {fileID: 114776944592252664}
+  - component: {fileID: 4335991095792173615}
+  m_Layer: 0
+  m_Name: GameManagerBackupBob
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3980676056072136020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3980676056072136010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114776944592252664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3980676056072136010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12a94999cbdb3540a44b13e41d8874c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlaceStickColor: {r: 0, g: 0.8691118, b: 1, a: 1}
+  ToggleJointColor: {r: 0.14481235, g: 1, b: 0, a: 1}
+  ToggleEndPartColor: {r: 0.9427508, g: 1, b: 0, a: 1}
+  DeleteColor: {r: 1, g: 0, b: 0, a: 1}
+  ControlsBackground: {fileID: 0}
+  CurrentState: 0
+--- !u!114 &4335991095792173615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3980676056072136010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06768e4154032c45bafd7251d2d54d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Levels: {fileID: 11400000, guid: cdd5463903731344b81caa622d6f2f5c, type: 2}
+  LevelSelect: 1
+  CurrentLevel:
+    LevelName: Level 1
+    Mission: 
+    StickRequirement: 3
+    EndItemRequirement: 2
+    JointRequirement: 0
+  LevelComplete: 0
+  StickReqMet: 0
+  EndItemReqMet: 0
+  JointReqMet: 0
+  Sticks: []
+  EndItems: []
+  Joints: []
+  ProgressRect: {fileID: 0}
+  StickProgressText: {fileID: 0}
+  EndItemProgressText: {fileID: 0}
+  JointProgressText: {fileID: 0}
+  ReqIncompleteColor: {r: 1, g: 0.1745283, b: 0.1745283, a: 1}
+  ReqCompleteColor: {r: 0, g: 1, b: 0.023826122, a: 1}
