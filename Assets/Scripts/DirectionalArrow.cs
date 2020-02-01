@@ -7,6 +7,6 @@ public class DirectionalArrow : AClickable {
 	public AAttachable attachable;
 
 	public override void OnClick() {
-		attachable.Attach( transform );
+		attachable.Attach( this,  transform );
 	}
 }

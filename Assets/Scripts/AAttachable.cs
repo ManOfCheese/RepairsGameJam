@@ -4,10 +4,7 @@ using UnityEngine;
 
 public abstract class AAttachable : MonoBehaviour {
 
-	//To Delete.
-	public GameObject arrows;
-
-	public virtual void Attach( Transform arrowTransform ) {
-		Destroy( arrows );
+	public virtual void Attach( DirectionalArrow arrow, Transform arrowTransform ) {
+		arrow.gameObject.SetActive( false );
 	}
 }
