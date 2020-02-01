@@ -11,6 +11,8 @@ public class Levels : ScriptableObject
 public class Level
 {
     public string LevelName;
+    [TextArea]
+    public string Mission;
     public int StickRequirement;
     public int EndItemRequirement;
     public int JointRequirement;

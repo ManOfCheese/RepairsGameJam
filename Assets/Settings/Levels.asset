@@ -14,18 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelList:
   - LevelName: Level 1
+    Mission: 
     StickRequirement: 3
     EndItemRequirement: 2
     JointRequirement: 0
   - LevelName: Level 2
+    Mission: 
     StickRequirement: 4
     EndItemRequirement: 5
     JointRequirement: 0
   - LevelName: Level 3
+    Mission: 
     StickRequirement: 1
     EndItemRequirement: 1
     JointRequirement: 0
   - LevelName: Level 4
+    Mission: 
     StickRequirement: 1
     EndItemRequirement: 873578
     JointRequirement: 0
