@@ -88,7 +88,6 @@ public class ClickFunctionsStateMachine : MonoBehaviour
             default:
                 Debug.LogError("Unknown state");
                 break;
-
         }
     }
     #endregion
