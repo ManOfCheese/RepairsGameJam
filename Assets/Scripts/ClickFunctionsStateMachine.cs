@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClickFunctionsStateMachine : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class ClickFunctionsStateMachine : MonoBehaviour
     public Color PlaceJointColor = Color.white;
     public Color PlaceEndPartColor = Color.white;
     public Color DeleteColor = Color.white;
+    public Image ControlsBackground;
+
+    private bool enterNewState = false;
     #endregion
 
     #region States
@@ -26,11 +30,37 @@ public class ClickFunctionsStateMachine : MonoBehaviour
     public void SetState(States pNewState)
     {
         CurrentState = pNewState;
+        enterNewState = true;
+        if (ControlsBackground == null)
+        {
+            return;
+        }
+        switch (CurrentState)
+        {
+            case States.NoFunction:
+                ControlsBackground.color = NoFunctionColor;
+                break;
+            case States.PlaceJoint:
+                ControlsBackground.color = PlaceJointColor;
+                break;
+            case States.PlaceStick:
+                ControlsBackground.color = PlaceStickColor;
+                break;
+            case States.PlaceEndPart:
+                ControlsBackground.color = PlaceEndPartColor;
+                break;
+            case States.Delete:
+                ControlsBackground.color = DeleteColor;
+                break;
+            default:
+                Debug.LogError("Unknown state");
+                break;
+        }
     }
 
     public void SetState(int pNewState)
     {
-        CurrentState = (States)pNewState;
+        SetState((States)pNewState);
     }
 
     public void NoFunction()
