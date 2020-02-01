@@ -7,7 +7,7 @@ public enum ConnectionType {
 	Hinge
 }
 
-public class Joint : ADeletable {
+public class Jonko : ADeletable {
 
 	public GameObject fixedJointPrefab;
 	public GameObject hingeJointPrefab;

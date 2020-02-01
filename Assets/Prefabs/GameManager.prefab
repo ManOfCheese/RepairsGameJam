@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4030265020602071374}
-  - component: {fileID: 4030265020602071377}
-  - component: {fileID: 4394628727297613365}
+  - component: {fileID: 5808927918818078167}
+  - component: {fileID: 1952435399301521057}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4030265020602071377
+--- !u!114 &5808927918818078167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,16 +41,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4030265020602071376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28e230c7a83c5e24fadc6dba0d6c3ba3, type: 3}
+  m_Script: {fileID: 11500000, guid: a12a94999cbdb3540a44b13e41d8874c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlaceStickColor: {r: 0.43965825, g: 0.95568156, b: 0.9811321, a: 1}
-  ToggleJointColor: {r: 0.43543077, g: 0.9716981, b: 0.5197391, a: 1}
-  ToggleEndPartColor: {r: 0.9416876, g: 1, b: 0.4764151, a: 1}
-  DeleteColor: {r: 1, g: 0.3726415, b: 0.3726415, a: 1}
+  PlaceStickColor: {r: 0, g: 0.8691118, b: 1, a: 1}
+  ToggleJointColor: {r: 0.14481235, g: 1, b: 0, a: 1}
+  ToggleEndPartColor: {r: 0.9427508, g: 1, b: 0, a: 1}
+  DeleteColor: {r: 1, g: 0, b: 0, a: 1}
   ControlsBackground: {fileID: 0}
   CurrentState: 0
---- !u!114 &4394628727297613365
+--- !u!114 &1952435399301521057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,13 +66,20 @@ MonoBehaviour:
   LevelSelect: 1
   CurrentLevel:
     LevelName: Level 1
+    Mission: 
     StickRequirement: 3
     EndItemRequirement: 2
     JointRequirement: 0
   LevelComplete: 0
   StickReqMet: 0
   EndItemReqMet: 0
-  ConnectionJointReqMet: 0
+  JointReqMet: 0
   Sticks: []
   EndItems: []
-  ConnectionJoints: []
+  Joints: []
+  ProgressRect: {fileID: 0}
+  StickProgressText: {fileID: 0}
+  EndItemProgressText: {fileID: 0}
+  JointProgressText: {fileID: 0}
+  ReqIncompleteColor: {r: 1, g: 0, b: 0, a: 1}
+  ReqCompleteColor: {r: 0, g: 1, b: 0, a: 1}

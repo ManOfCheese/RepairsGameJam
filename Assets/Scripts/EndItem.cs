@@ -16,9 +16,7 @@ public class EndItem : MonoBehaviour {
 
 	public void ToggleJoint() {
 		Instantiate( jointPrefab, transform.position + ( transform.position - attachedToStick.transform.position ).normalized * jointOffset, transform.rotation );
-		ConnectionJoint connectionJoint = jointPrefab.GetComponent<ConnectionJoint>();
-		connectionJoint.connectionType = ConnectionType.Fixed;
-		connectionJoint.attachedToStick = attachedToStick;
+		Jonko connectionJoint = jointPrefab.GetComponent<Jonko>();
 	}
 
 }

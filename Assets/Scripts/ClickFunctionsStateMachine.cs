@@ -74,8 +74,8 @@ public class ClickFunctionsStateMachine : MonoBehaviour
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
 			if ( Physics.Raycast( ray, out hit, 100.0f ) ) {
-				if ( hit.transform.gameObject.GetComponent<Joint>() ) {
-					hit.transform.gameObject.GetComponent<Joint>().ToggleJoint();
+				if ( hit.transform.gameObject.GetComponent<Jonko>() ) {
+					hit.transform.gameObject.GetComponent<Jonko>().ToggleJoint();
 				}
 			}
 		}

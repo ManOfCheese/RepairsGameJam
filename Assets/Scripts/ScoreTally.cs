@@ -121,14 +121,14 @@ public class ScoreTally : MonoBehaviour
         return EndItemReqMet;
     }
 
-    [SerializeField] private List<ConnectionJoint> Joints;
-    public void AddConnectionJoint(ConnectionJoint connectionJoint)
+    [SerializeField] private List<Jonko> Joints;
+    public void AddConnectionJoint( Jonko connectionJoint )
     {
         Joints.Add(connectionJoint);
         //CheckConnectionJointRequirementMet();
         CheckAllRequirements();
     }
-    public void RemoveConnectionJoint(ConnectionJoint connectionJoint)
+    public void RemoveConnectionJoint( Jonko connectionJoint )
     {
         Joints.Remove(connectionJoint);
         //CheckConnectionJointRequirementMet();
