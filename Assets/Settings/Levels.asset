@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00daa2eae0fbc0c45b69730ea8630150, type: 3}
+  m_Name: Levels
+  m_EditorClassIdentifier: 
+  LevelList:
+  - LevelName: Level 1
+    Mission: 
+    StickRequirement: 3
+    EndItemRequirement: 2
+    JointRequirement: 0
+  - LevelName: Level 2
+    Mission: 
+    StickRequirement: 4
+    EndItemRequirement: 5
+    JointRequirement: 0
+  - LevelName: Level 3
+    Mission: 
+    StickRequirement: 1
+    EndItemRequirement: 1
+    JointRequirement: 0
+  - LevelName: Level 4
+    Mission: 
+    StickRequirement: 1
+    EndItemRequirement: 873578
+    JointRequirement: 0
