@@ -1,0 +1,149 @@
+fileFormatVersion: 2
+guid: 7f37ed235ac74cc499b036e9371243dd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BG
+    100002: Client
+    100004: Dumpster
+    100006: Fence
+    100008: Game_Cam
+    100010: Lamp
+    100012: //RootNode
+    100014: Set
+    100016: Streetlamp
+    100018: Trashcans
+    400000: BG
+    400002: Client
+    400004: Dumpster
+    400006: Fence
+    400008: Game_Cam
+    400010: Lamp
+    400012: //RootNode
+    400014: Set
+    400016: Streetlamp
+    400018: Trashcans
+    2000000: Game_Cam
+    2100000: mat_Environment
+    2100002: mat_Fence
+    2100004: lambert1
+    2300000: Client
+    2300002: Dumpster
+    2300004: Fence
+    2300006: Lamp
+    2300008: Set
+    2300010: Trashcans
+    3300000: Client
+    3300002: Dumpster
+    3300004: Fence
+    3300006: Lamp
+    3300008: Set
+    3300010: Trashcans
+    4300000: Set
+    4300002: Fence
+    4300004: Dumpster
+    4300006: Trashcans
+    4300008: Lamp
+    4300010: Client
+    10800000: Streetlamp
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 0f5337c8265e5f346a1c272f6f4bae87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Environment
+    second: {fileID: 2100000, guid: 09b8e96b4376c3b4f878190324ddc5eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Fence
+    second: {fileID: 2100000, guid: 3756c52aca96922489233f290ccca692, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
