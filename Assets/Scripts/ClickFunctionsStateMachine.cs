@@ -71,8 +71,17 @@ public class ClickFunctionsStateMachine : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Toggle joint");
-            // Functionality!
-        }
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
+			if ( Physics.Raycast( ray, out hit, 100.0f ) ) {
+				if ( hit.transform.gameObject.GetComponent<ConnectionJoint>() ) {
+					hit.transform.gameObject.GetComponent<ConnectionJoint>().ToggleJoint();
+				}
+				if ( hit.transform.gameObject.GetComponent<EndItem>() ) {
+					hit.transform.gameObject.GetComponent<EndItem>().ToggleJoint();
+				}
+			}
+		}
 	}
 
     public void ToggleEndPart()
@@ -80,16 +89,28 @@ public class ClickFunctionsStateMachine : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Toggle end part");
-            // Functionality!
-        }
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
+			if ( Physics.Raycast( ray, out hit, 100.0f ) ) {
+				if ( hit.transform.gameObject.GetComponent<ConnectionJoint>() ) {
+					hit.transform.gameObject.GetComponent<ConnectionJoint>().CreateEndItem();
+				}
+			}
+		}
     }
 
     #endregion
     public void Delete()
     {
         Debug.Log("Delete");
-        // Functionality!
-    }
+		RaycastHit hit;
+		Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
+		if ( Physics.Raycast( ray, out hit, 100.0f ) ) {
+			if ( hit.transform.gameObject.GetComponent<ADeletable>() ) {
+				hit.transform.gameObject.GetComponent<ADeletable>().Delete();
+			}
+		}
+	}
 
     #region Unity Functions
     void Start()
