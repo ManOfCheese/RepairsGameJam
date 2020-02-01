@@ -34,7 +34,11 @@ public class WorldSpaceTextBox : MonoBehaviour
 
     public void InverselyScaleCanvas()
     {
-        Debug.Log("Set this shit");
+        if (WorldSpaceCanvas == null)
+        {
+            Debug.LogError("Assign a canvas", this);
+            return;
+        }
         WorldSpaceCanvas.GetComponent<RectTransform>().sizeDelta = transform.localScale;
         Vector3 newScale = Vector3.one;
         newScale.x = Mathf.Pow(transform.localScale.x, -1);
