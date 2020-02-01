@@ -336,6 +336,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2332937406910422247, guid: 670ab9c01c784494ea45c59c626ddf4a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 15.275699
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332937406910422247, guid: 670ab9c01c784494ea45c59c626ddf4a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 8.00937
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332937406910422247, guid: 670ab9c01c784494ea45c59c626ddf4a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.06546345
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332937406910422247, guid: 670ab9c01c784494ea45c59c626ddf4a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.124853775
+      objectReference: {fileID: 0}
     - target: {fileID: 2352550652420229638, guid: 670ab9c01c784494ea45c59c626ddf4a,
         type: 3}
       propertyPath: m_Camera
@@ -396,10 +416,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3367629424152165361, guid: 670ab9c01c784494ea45c59c626ddf4a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12.831587
+      objectReference: {fileID: 0}
     - target: {fileID: 3367629424152165373, guid: 670ab9c01c784494ea45c59c626ddf4a,
         type: 3}
       propertyPath: m_Name
       value: WorldSpaceTextBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652796732361636228, guid: 670ab9c01c784494ea45c59c626ddf4a,
+        type: 3}
+      propertyPath: TextScale
+      value: 0.84
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 670ab9c01c784494ea45c59c626ddf4a, type: 3}

@@ -6,7 +6,8 @@ public class WorldSpaceTextBox : MonoBehaviour
 {
     public Canvas WorldSpaceCanvas;
 
-    public Vector3 TextBoxLocalScale;
+    [Range(.01f, 10f)]
+    public float TextScale;
 
     public bool Rotate;
 
@@ -23,7 +24,6 @@ public class WorldSpaceTextBox : MonoBehaviour
         if (Rotate)
         {
             transform.Rotate(0f, 1f, 0f);
-            WorldSpaceCanvas.transform.Rotate(0f, 1f, 0f);
         }
     }
 
@@ -39,10 +39,10 @@ public class WorldSpaceTextBox : MonoBehaviour
             Debug.LogError("Assign a canvas", this);
             return;
         }
-        WorldSpaceCanvas.GetComponent<RectTransform>().sizeDelta = transform.localScale;
+        WorldSpaceCanvas.GetComponent<RectTransform>().sizeDelta = transform.localScale / TextScale;
         Vector3 newScale = Vector3.one;
-        newScale.x = Mathf.Pow(transform.localScale.x, -1);
-        newScale.y = Mathf.Pow(transform.localScale.y, -1);
+        newScale.x = Mathf.Pow(transform.localScale.x, -1) * TextScale;
+        newScale.y = Mathf.Pow(transform.localScale.y, -1) * TextScale;
         WorldSpaceCanvas.transform.localScale = newScale;
     }
 }
