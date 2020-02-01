@@ -1,89 +1,46 @@
 fileFormatVersion: 2
-guid: 5e2283c9e46db1a4cb7c771042cef80d
+guid: ac594021ea1bf0b468200c1c95e00264
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Back
-    100002: Check_checked
-    100004: Check_checked 1
-    100006: Check_checked 2
-    100008: Check_unchecked
-    100010: Check_unchecked 1
-    100012: Check_unchecked 2
-    100014: Checkmark
-    100016: Checkmark1
-    100018: Checkmark2
-    100020: Exit
-    100022: Options
-    100024: Play
-    100026: Sound_Effects
-    100028: Sound_Master
-    100030: Sound_Music
-    100032: //RootNode
-    100034: Tutorial
-    400000: Back
-    400002: Check_checked
-    400004: Check_checked 1
-    400006: Check_checked 2
-    400008: Check_unchecked
-    400010: Check_unchecked 1
-    400012: Check_unchecked 2
-    400014: Checkmark
-    400016: Checkmark1
-    400018: Checkmark2
-    400020: Exit
-    400022: Options
-    400024: Play
-    400026: Sound_Effects
-    400028: Sound_Master
-    400030: Sound_Music
-    400032: //RootNode
-    400034: Tutorial
-    2100000: mat_Text
-    2300000: Back
-    2300002: Check_checked
-    2300004: Check_checked 1
-    2300006: Check_checked 2
-    2300008: Check_unchecked
-    2300010: Check_unchecked 1
-    2300012: Check_unchecked 2
-    2300014: Exit
-    2300016: Options
-    2300018: Play
-    2300020: Sound_Effects
-    2300022: Sound_Master
-    2300024: Sound_Music
-    2300026: Tutorial
-    3300000: Back
-    3300002: Check_checked
-    3300004: Check_checked 1
-    3300006: Check_checked 2
-    3300008: Check_unchecked
-    3300010: Check_unchecked 1
-    3300012: Check_unchecked 2
-    3300014: Exit
-    3300016: Options
-    3300018: Play
-    3300020: Sound_Effects
-    3300022: Sound_Master
-    3300024: Sound_Music
-    3300026: Tutorial
-    4300000: Play
-    4300002: Tutorial
-    4300004: Options
-    4300006: Exit
-    4300008: Back
-    4300010: Sound_Master
-    4300012: Check_checked
-    4300014: Check_unchecked
-    4300016: Sound_Music
-    4300018: Check_checked
-    4300020: Check_unchecked
-    4300022: Sound_Effects
-    4300024: Check_checked
-    4300026: Check_unchecked
-    2186277476908879412: ImportLogs
+    100000: Exit
+    100002: Main_Menu
+    100004: Options
+    100006: Pause
+    100008: //RootNode
+    100010: Resume
+    400000: Exit
+    400002: Main_Menu
+    400004: Options
+    400006: Pause
+    400008: //RootNode
+    400010: Resume
+    2100000: mat_Cardboard
+    2100002: mat_Text
+    2300000: Exit
+    2300002: Main_Menu
+    2300004: Options
+    2300006: Pause
+    2300008: //RootNode
+    2300010: Resume
+    3300000: Exit
+    3300002: Main_Menu
+    3300004: Options
+    3300006: Pause
+    3300008: //RootNode
+    3300010: Resume
+    4300000: Menu_Cardbard
+    4300002: Pause
+    4300004: Resume
+    4300006: Main_Menu
+    4300008: Options
+    4300010: Exit
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Cardboard
+    second: {fileID: 2100000, guid: c437f6013d735b14ab71bb243353d129, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
