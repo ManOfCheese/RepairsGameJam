@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreTally : MonoBehaviour
 {
@@ -48,12 +49,13 @@ public class ScoreTally : MonoBehaviour
         CurrentLevel = Levels.LevelList[newLevelIndex];
     }
 
+    #region Progress
     [Header("Level progress")]
     public bool LevelComplete;
 
     public bool StickReqMet;
     public bool EndItemReqMet;
-    public bool ConnectionJointReqMet;
+    public bool JointReqMet;
 
     [SerializeField] private List<GameObject> Sticks;
     public void AddStick(GameObject stick)
@@ -70,7 +72,21 @@ public class ScoreTally : MonoBehaviour
     }
     public bool CheckStickRequirementMet()
     {
-         return StickReqMet = Sticks.Count >= CurrentLevel.StickRequirement;
+        StickReqMet = Sticks.Count >= CurrentLevel.StickRequirement;
+        if (StickProgressText != null)
+        {
+            StickProgressText.text = "Sticks: " + Sticks.Count + " / " + CurrentLevel.StickRequirement;
+            if (StickReqMet)
+            {
+                StickProgressText.color = ReqCompleteColor;
+            }
+            else
+            {
+                StickProgressText.color = ReqIncompleteColor;
+            }
+        }
+        else Debug.Log("Stick Progress text not assigned");
+        return StickReqMet;
     }
 
     [SerializeField] private List<EndItem> EndItems;
@@ -88,44 +104,82 @@ public class ScoreTally : MonoBehaviour
     }
     public bool CheckEndItemRequirementMet()
     {
-        return EndItemReqMet = EndItems.Count >= CurrentLevel.EndItemRequirement;
+        EndItemReqMet = EndItems.Count >= CurrentLevel.EndItemRequirement;
+        if (EndItemProgressText != null)
+        {
+            EndItemProgressText.text = "Sticks: " + EndItems.Count + " / " + CurrentLevel.EndItemRequirement;
+            if (EndItemReqMet)
+            {
+                EndItemProgressText.color = ReqCompleteColor;
+            }
+            else
+            {
+                EndItemProgressText.color = ReqIncompleteColor;
+            }
+        }
+        else Debug.Log("End Item Progress text not assigned");
+        return EndItemReqMet;
     }
 
-    [SerializeField] private List<ConnectionJoint> ConnectionJoints;
+    [SerializeField] private List<ConnectionJoint> Joints;
     public void AddConnectionJoint(ConnectionJoint connectionJoint)
     {
-        ConnectionJoints.Add(connectionJoint);
+        Joints.Add(connectionJoint);
         //CheckConnectionJointRequirementMet();
         CheckAllRequirements();
     }
     public void RemoveConnectionJoint(ConnectionJoint connectionJoint)
     {
-        ConnectionJoints.Remove(connectionJoint);
+        Joints.Remove(connectionJoint);
         //CheckConnectionJointRequirementMet();
         CheckAllRequirements();
     }
     public bool CheckConnectionJointRequirementMet()
     {
-        Debug.Log("Check joint requirements");
-        return ConnectionJointReqMet = ConnectionJoints.Count >= CurrentLevel.JointRequirement;
+        JointReqMet = Joints.Count >= CurrentLevel.JointRequirement;
+        if (JointProgressText != null)
+        {
+            JointProgressText.text = "Sticks: " + Joints.Count + " / " + CurrentLevel.JointRequirement;
+            if (JointReqMet)
+            {
+                JointProgressText.color = ReqCompleteColor;
+            }
+            else
+            {
+                JointProgressText.color = ReqIncompleteColor;
+            }
+        }
+        else Debug.Log("Joint Progress text not assigned");
+        return JointReqMet;
     }
 
     public bool CheckAllRequirements()
     {
-        Debug.Log("Hello?");
+        Debug.Log("Checking all level requirements");
         CheckStickRequirementMet();
         CheckEndItemRequirementMet();
         CheckConnectionJointRequirementMet();
-        LevelComplete = StickReqMet && EndItemReqMet && ConnectionJointReqMet;
+        LevelComplete = StickReqMet && EndItemReqMet && JointReqMet;
         return LevelComplete;
     }
+    #endregion
+
+    #region Progress UI
+    [Header("Progress UI")]
+    public RectTransform RectTransform;
+    public Text StickProgressText;
+    public Text EndItemProgressText;
+    public Text JointProgressText;
+
+    public Color ReqIncompleteColor = Color.red;
+    public Color ReqCompleteColor = Color.green;
+    #endregion
 
     #region Unity Functions
     private void Start()
     {
         CheckAllRequirements();
     }
-
     #endregion
 }
 #pragma warning restore CS0649
