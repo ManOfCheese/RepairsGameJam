@@ -12,8 +12,6 @@ public class ClickFunctionsStateMachine : MonoBehaviour
     public Color PlaceEndPartColor = Color.white;
     public Color DeleteColor = Color.white;
     public Image ControlsBackground;
-
-    private bool enterNewState = false;
     #endregion
 
     #region States
@@ -26,11 +24,11 @@ public class ClickFunctionsStateMachine : MonoBehaviour
         Delete
     }
 
+    [Header("States")]
     public States CurrentState;
     public void SetState(States pNewState)
     {
         CurrentState = pNewState;
-        enterNewState = true;
         if (ControlsBackground == null)
         {
             return;
