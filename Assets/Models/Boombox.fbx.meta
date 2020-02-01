@@ -1,26 +1,15 @@
 fileFormatVersion: 2
-guid: a0d645112f1bf4442b56137e73de6da4
+guid: ecb5880907512f14fbb7837262e7410a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: mat_Glossy
-    2100002: mat_Object
+    2100000: mat_Object
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Tentacle
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mat_Glossy
-    second: {fileID: 2100000, guid: 833649f1a716b5e4e8d5afccc3b04dd6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mat_Object
-    second: {fileID: 2100000, guid: 2e169cdbe81a7fd41b96e129e1d19148, type: 2}
+    4300000: Boombox
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

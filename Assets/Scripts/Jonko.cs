@@ -12,6 +12,7 @@ public class Jonko : ADeletable {
 	public GameObject fixedJointPrefab;
 	public GameObject hingeJointPrefab;
 	public GameObject endItemPrefab;
+	public bool isAnchor;
 
 	public void ConnectRigidBody( Rigidbody rigidBody ) {
 		GetComponent<HingeJoint>().connectedBody = rigidBody;
@@ -27,6 +28,12 @@ public class Jonko : ADeletable {
 			FixedJoint fixedJoint = Instantiate( fixedJointPrefab, transform.position, transform.rotation ).GetComponent<FixedJoint>();
 			fixedJoint.connectedBody = GetComponent<HingeJoint>().connectedBody;
 			Destroy( this.gameObject );
+		}
+	}
+
+	public override void Delete() {
+		if ( !GetComponent<HingeJoint>() ) {
+			Destroy( transform.parent.gameObject );
 		}
 	}
 }
