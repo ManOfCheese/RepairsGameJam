@@ -10,7 +10,7 @@ public class RandomizeList : MonoBehaviour {
     void Start() {
         int randomIndex = Random.Range(0, randomizedObjects.Length);
 
-        GameObject instantiatedObject = Instantiate(randomizedObjects[randomIndex], 0, Quaternion.identity) as GameObject;
+        //GameObject instantiatedObject = Instantiate(randomizedObjects[randomIndex], 0, Quaternion.identity) as GameObject;
     }
 
 
