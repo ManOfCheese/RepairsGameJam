@@ -19,5 +19,4 @@ public abstract class AClickable : MonoBehaviour {
 	public virtual void OnClickRelease() {
 
 	}
-    
 }
