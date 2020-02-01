@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 455588789}
   - component: {fileID: 455588788}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: EndItemProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1529,7 +1529,7 @@ GameObject:
   - component: {fileID: 770384606}
   - component: {fileID: 770384605}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: ProgressPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2744,7 +2744,7 @@ GameObject:
   - component: {fileID: 1666858577}
   - component: {fileID: 1666858576}
   m_Layer: 5
-  m_Name: Text
+  m_Name: SticksProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3334,6 +3334,11 @@ PrefabInstance:
       propertyPath: JointProgressText
       value: 
       objectReference: {fileID: 1976761189}
+    - target: {fileID: 4394628727297613365, guid: c71d02b1527341e44b797f744c3530e9,
+        type: 3}
+      propertyPath: ProgressRect
+      value: 
+      objectReference: {fileID: 770384605}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c71d02b1527341e44b797f744c3530e9, type: 3}
 --- !u!1 &1976761187
@@ -3348,7 +3353,7 @@ GameObject:
   - component: {fileID: 1976761190}
   - component: {fileID: 1976761189}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: JointProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

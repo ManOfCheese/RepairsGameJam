@@ -160,13 +160,24 @@ public class ScoreTally : MonoBehaviour
         CheckEndItemRequirementMet();
         CheckConnectionJointRequirementMet();
         LevelComplete = StickReqMet && EndItemReqMet && JointReqMet;
+        if (ProgressRect != null)
+        {
+            if (LevelComplete)
+            {
+                ProgressRect.color = ReqCompleteColor;
+            }
+            else
+            {
+                ProgressRect.color = Color.white;
+            }
+        }
         return LevelComplete;
     }
     #endregion
 
     #region Progress UI
     [Header("Progress UI")]
-    public RectTransform RectTransform;
+    public Image ProgressRect;
     public Text StickProgressText;
     public Text EndItemProgressText;
     public Text JointProgressText;
