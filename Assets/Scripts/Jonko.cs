@@ -29,4 +29,23 @@ public class Jonko : ADeletable {
 			Destroy( this.gameObject );
 		}
 	}
+
+	public override void Delete() {
+		if ( !GetComponent<HingeJoint>() ) {
+			Destroy( transform.parent.gameObject );
+		}
+	}
+
+	private void Update() {
+		if ( GetComponent<FixedJoint>() ) {
+			if ( GetComponent<FixedJoint>().connectedBody == null ) {
+				Destroy( GetComponent<FixedJoint>() );
+			}
+		}
+		if ( GetComponent<HingeJoint>() ) {
+			if ( GetComponent<HingeJoint>().connectedBody == null ) {
+				Destroy( GetComponent<HingeJoint>() );
+			}
+		}
+	}
 }
