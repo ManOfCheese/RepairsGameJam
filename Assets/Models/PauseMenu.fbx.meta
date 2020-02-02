@@ -9,32 +9,99 @@ ModelImporter:
     100006: Pause
     100008: //RootNode
     100010: Resume
+    100012: Back
+    100014: Back 1
+    100016: Checkmark_checked
+    100018: Checkmark_checked 1
+    100020: Checkmark_checked 2
+    100022: Controls
+    100024: Controls 1
+    100026: Menu_Controls
+    100028: Menu_Options
+    100030: Menu_Pause
+    100032: Options 1
+    100034: Plane
+    100036: Sound_Effects
+    100038: Sound_Master
+    100040: Sound_Music
     400000: Exit
     400002: Main_Menu
     400004: Options
     400006: Pause
     400008: //RootNode
     400010: Resume
+    400012: Back
+    400014: Back 1
+    400016: Checkmark_checked
+    400018: Checkmark_checked 1
+    400020: Checkmark_checked 2
+    400022: Controls
+    400024: Controls 1
+    400026: Menu_Controls
+    400028: Menu_Options
+    400030: Menu_Pause
+    400032: Options 1
+    400034: Plane
+    400036: Sound_Effects
+    400038: Sound_Master
+    400040: Sound_Music
     2100000: mat_Cardboard
     2100002: mat_Text
+    2100004: mat_controls
     2300000: Exit
     2300002: Main_Menu
     2300004: Options
     2300006: Pause
     2300008: //RootNode
     2300010: Resume
+    2300012: Back
+    2300014: Back 1
+    2300016: Checkmark_checked
+    2300018: Checkmark_checked 1
+    2300020: Checkmark_checked 2
+    2300022: Controls
+    2300024: Controls 1
+    2300026: Options 1
+    2300028: Plane
+    2300030: Sound_Effects
+    2300032: Sound_Master
+    2300034: Sound_Music
     3300000: Exit
     3300002: Main_Menu
     3300004: Options
     3300006: Pause
     3300008: //RootNode
     3300010: Resume
+    3300012: Back
+    3300014: Back 1
+    3300016: Checkmark_checked
+    3300018: Checkmark_checked 1
+    3300020: Checkmark_checked 2
+    3300022: Controls
+    3300024: Controls 1
+    3300026: Options 1
+    3300028: Plane
+    3300030: Sound_Effects
+    3300032: Sound_Master
+    3300034: Sound_Music
     4300000: Menu_Cardbard
     4300002: Pause
     4300004: Resume
     4300006: Main_Menu
     4300008: Options
     4300010: Exit
+    4300012: Controls
+    4300014: Options
+    4300016: Sound_Master
+    4300018: Checkmark_checked
+    4300020: Sound_Music
+    4300022: Checkmark_checked
+    4300024: Sound_Effects
+    4300026: Checkmark_checked
+    4300028: Back
+    4300030: Controls
+    4300032: Plane
+    4300034: Back
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -46,6 +113,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: mat_Text
     second: {fileID: 2100000, guid: 95e8f4d2ea591ec43ace8dc929a466e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_controls
+    second: {fileID: 2100000, guid: 130d6423004dcfe44915eb3bd32845b3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
