@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365719098395412596}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -125,3 +125,12 @@ MonoBehaviour:
   attachedToStick: {fileID: 0}
   jointPrefab: {fileID: 5163698669083173873, guid: ec98eeca16c33434aadd811aecad0e70,
     type: 3}
+  arrows: {fileID: 0}
+  models:
+  - {fileID: 661658504238183279, guid: 9524765fdc0dac641b6a3d8866b2d755, type: 3}
+  - {fileID: 4595607041781379339, guid: 9c4b2d821e82a0c4db66e07bc08ea3ee, type: 3}
+  - {fileID: 4645320000790575405, guid: da0764f2a4d1c454db764fad18a51135, type: 3}
+  - {fileID: 4823691504332314569, guid: 87448d88e5734554a978b0fd829761de, type: 3}
+  - {fileID: 6213063358496753954, guid: a06c9f93497ebfe46a37ebe03144a810, type: 3}
+  - {fileID: 4658810636278012157, guid: f769b97c00f7ebe4b863fbca9e42629c, type: 3}
+  - {fileID: 3516314213461292068, guid: 8d16531b6312ab0408c26b13b6dd5bec, type: 3}

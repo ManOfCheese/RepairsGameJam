@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class AAttachable : MonoBehaviour {
 
 	public virtual void Attach( DirectionalArrow arrow, Transform arrowTransform ) {
-		arrow.gameObject.SetActive( false );
+		arrow.visible = false;
+		arrow.ApplyVisibility();
 	}
 }
