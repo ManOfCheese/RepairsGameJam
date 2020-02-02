@@ -182,6 +182,11 @@ public class ScoreTally : MonoBehaviour
         }
         return LevelComplete;
     }
+
+	public void Win() {
+		winText.gameObject.SetActive( true );
+		StartCoroutine( GoToOutroScene() );
+	}
     #endregion
      
     #region Progress UI
@@ -190,6 +195,7 @@ public class ScoreTally : MonoBehaviour
     public Text StickProgressText;
     public Text EndItemProgressText;
     public Text JointProgressText;
+	public GameObject winText;
 
     public Color ReqIncompleteColor = Color.red;
     public Color ReqCompleteColor = Color.green;
@@ -200,6 +206,11 @@ public class ScoreTally : MonoBehaviour
     {
         CheckAllRequirements();
     }
-    #endregion
+	#endregion
+
+	IEnumerator GoToOutroScene() {
+		yield return new WaitForSeconds( 3 );
+		GetComponent<SceneManager_GGJ>().NextScene();
+	}
 }
 #pragma warning restore CS0649

@@ -16,15 +16,19 @@ public class Jonko : ADeletable {
 	public bool isAnchor;
 
 	private ScoreTally scoreTally;
+	private bool hasModel;
 
 	private void Awake() {
 		scoreTally = FindObjectOfType<ScoreTally>();
-		Instantiate( models[ Random.Range( 0, models.Count - 1 ) ], this.transform );
 	}
 
 	private void OnEnable() {
 		if ( !isAnchor ) {
 			scoreTally.AddConnectionJoint( this );
+		}
+		if ( transform.childCount == 0 ) {
+			Instantiate( models[ Random.Range( 0, models.Count - 1 ) ], this.transform );
+			hasModel = true;
 		}
 	}
 
@@ -48,6 +52,17 @@ public class Jonko : ADeletable {
 			FixedJoint fixedJoint = Instantiate( fixedJointPrefab, transform.position, transform.rotation ).GetComponent<FixedJoint>();
 			fixedJoint.connectedBody = GetComponent<HingeJoint>().connectedBody;
 			Destroy( this.gameObject );
+		}
+	}
+
+	private void Update() {
+		if ( GetComponent<FixedJoint>() ) {
+			HingeJoint[] joints = GetComponents<HingeJoint>();
+			for ( int i = 0; i < joints.Length; i++ ) {
+				if ( joints[ i ].connectedBody == null ) {
+					Destroy( GetComponent<HingeJoint>() );
+				}
+			}
 		}
 	}
 

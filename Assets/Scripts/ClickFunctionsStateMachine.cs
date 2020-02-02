@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ClickFunctionsStateMachine : MonoBehaviour
 {
@@ -133,6 +134,9 @@ public class ClickFunctionsStateMachine : MonoBehaviour
             Delete();
             return;
         }
+		if ( Input.GetKeyDown( KeyCode.P ) ) {
+			SceneManager.LoadScene( "FinalMainMenu" );
+		}
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

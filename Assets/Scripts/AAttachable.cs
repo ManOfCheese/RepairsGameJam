@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class AAttachable : MonoBehaviour {
 
-	public virtual void Attach( DirectionalArrow arrow, Transform arrowTransform ) {
+	public virtual void Attach( DirectionalArrow arrow, Transform arrowTransform, Jonko joint ) {
 		arrow.visible = false;
 		arrow.ApplyVisibility();
 	}

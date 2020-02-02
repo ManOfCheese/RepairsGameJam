@@ -18,9 +18,11 @@ public class SceneManager_GGJ : MonoBehaviour
 
     public void NextScene()
     {
-        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCount)
+        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings )
         {
-            Debug.LogWarning("Next scene couldn't be loaded. Current scene build index is equal to scene count.");
+			Debug.Log( "BuildIndex: " + SceneManager.GetActiveScene().buildIndex );
+			Debug.Log( "SceneCount: " + SceneManager.sceneCount );
+			Debug.LogWarning("Next scene couldn't be loaded. Current scene build index is equal to scene count.");
             return;
         }
         Debug.Log("Load next scene");
@@ -28,7 +30,7 @@ public class SceneManager_GGJ : MonoBehaviour
     }
     public void CycleScenes()
     {
-        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCount)
+        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings )
         {
             Debug.Log("Next scene couldn't be loaded. Current scene build index is equal to scene count. Loading first scene");
             SceneManager.LoadScene(0);

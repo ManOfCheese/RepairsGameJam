@@ -55,8 +55,6 @@ MonoBehaviour:
     type: 3}
   hingeJointPrefab: {fileID: 5163698669083173873, guid: ec98eeca16c33434aadd811aecad0e70,
     type: 3}
-  stickPrefab: {fileID: 5725125534136679466, guid: 26334b09fcfd52344b8256b611fb18c7,
-    type: 3}
 --- !u!1 &6929454737726179924
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +263,16 @@ PrefabInstance:
       propertyPath: attachable
       value: 
       objectReference: {fileID: 6763054442039843802}
+    - target: {fileID: 2707392224506940112, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: isAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707392224506940112, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachAnchor
+      value: 
+      objectReference: {fileID: 6763054442039843802}
     - target: {fileID: 3544497123182480417, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: connectionPoint
@@ -351,6 +359,16 @@ PrefabInstance:
       propertyPath: attachable
       value: 
       objectReference: {fileID: 6763054442039843802}
+    - target: {fileID: 3941299494372345424, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: isAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941299494372345424, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachAnchor
+      value: 
+      objectReference: {fileID: 6763054442039843802}
     - target: {fileID: 4748822525881889444, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: connectionPoint
@@ -429,6 +447,16 @@ PrefabInstance:
       propertyPath: attachable
       value: 
       objectReference: {fileID: 6763054442039843802}
+    - target: {fileID: 7761312725759295262, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: isAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761312725759295262, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachAnchor
+      value: 
+      objectReference: {fileID: 6763054442039843802}
     - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: connectionPoint
@@ -453,6 +481,16 @@ PrefabInstance:
     - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: attachable
+      value: 
+      objectReference: {fileID: 6763054442039843802}
+    - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: isAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachAnchor
       value: 
       objectReference: {fileID: 6763054442039843802}
     m_RemovedComponents: []
