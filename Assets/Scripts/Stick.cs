@@ -6,13 +6,15 @@ public class Stick : ADeletable {
 
 	public List<DirectionalArrow> arrows;
 	public GameObject createEndItem;
-	public ScoreTally scoreTally;
+	public List<GameObject> models;
 
+	private ScoreTally scoreTally;
 	private FixedJoint fixedJoint;
 	private bool hasFixedJoint;
 
 	private void Awake() {
 		scoreTally = FindObjectOfType<ScoreTally>();
+		Instantiate( models[ Random.Range( 0, models.Count - 1 ) ], this.transform );
 	}
 
 	private void OnEnable() {
@@ -62,6 +64,13 @@ public class Stick : ADeletable {
 				createEndItem.SetActive( true );
 				Destroy( GetComponent<HingeJoint>() );
 			}
+		}
+	}
+
+	private void OnTriggerEnter( Collider other ) {
+		if ( other.GetComponent<Jonko>() ) {
+			AddFixedJoint();
+			ConnectRigidBody( other.GetComponent<Rigidbody>() );
 		}
 	}
 }

@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5163698669083173873}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -127,6 +127,14 @@ MonoBehaviour:
   hingeJointPrefab: {fileID: 5163698669083173873}
   endItemPrefab: {fileID: 8365719098395412596, guid: 43e2fb1e45d812c488ef58b650fa6f85,
     type: 3}
+  scoreTally: {fileID: 0}
+  models:
+  - {fileID: 2711027809890304071, guid: 8f378ff4adf17f3449375ac44822df16, type: 3}
+  - {fileID: 2366892455917036839, guid: 32a16cc720d60ca44a06c6bad57c119b, type: 3}
+  - {fileID: 6982108533138182024, guid: d182925f6b08520448123be613c35fb0, type: 3}
+  - {fileID: 2431658674410116525, guid: 699b38c0dd8ba22419bb678d4b0331af, type: 3}
+  - {fileID: 8615078705407294376, guid: 7c5bdb3bd40b9614cb4c5bad4898ce2f, type: 3}
+  isAnchor: 0
 --- !u!59 &7490611586713161150
 HingeJoint:
   m_ObjectHideFlags: 0

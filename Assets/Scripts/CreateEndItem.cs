@@ -10,10 +10,12 @@ public class CreateEndItem : AClickable {
 	public bool visible;
 
 	private ClickFunctionsStateMachine stateMachine;
+	private GameObject playField;
 	private float jointOffset = 2f;
 
 	private void Awake() {
 		stateMachine = FindObjectOfType<ClickFunctionsStateMachine>();
+		playField = FindObjectOfType<PlayField>().gameObject;
 		stateMachine.createEndItems.Add( this );
 		if ( enabled ) {
 			visible = true;
@@ -37,7 +39,7 @@ public class CreateEndItem : AClickable {
 	}
 
 	public override void OnClick() {
-		GameObject newEndItem = Instantiate( endItemPrefab );
+		GameObject newEndItem = Instantiate( endItemPrefab.gameObject, playField.transform );
 
 		newEndItem.transform.rotation = stick.transform.rotation;
 		newEndItem.transform.position = stick.transform.position + new Vector3( 0, stick.GetComponent<MeshRenderer>().bounds.extents.y, transform.position.z );

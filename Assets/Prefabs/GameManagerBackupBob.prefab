@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3980676056072136020}
   - component: {fileID: 114776944592252664}
   - component: {fileID: 4335991095792173615}
+  - component: {fileID: 8000551279888205652}
   m_Layer: 0
   m_Name: GameManagerBackupBob
   m_TagString: Untagged
@@ -83,3 +84,19 @@ MonoBehaviour:
   JointProgressText: {fileID: 0}
   ReqIncompleteColor: {r: 1, g: 0.1745283, b: 0.1745283, a: 1}
   ReqCompleteColor: {r: 0, g: 1, b: 0.023826122, a: 1}
+--- !u!114 &8000551279888205652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3980676056072136010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfde39b5ee44e94a8a05971bfbcd836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectedButton: 0
+  MenuLayer:
+    serializedVersion: 2
+    m_Bits: 2048

@@ -55,8 +55,6 @@ MonoBehaviour:
     type: 3}
   hingeJointPrefab: {fileID: 5163698669083173873, guid: ec98eeca16c33434aadd811aecad0e70,
     type: 3}
-  stickPrefab: {fileID: 5725125534136679466, guid: 26334b09fcfd52344b8256b611fb18c7,
-    type: 3}
 --- !u!1 &6929454737726179924
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,8 +64,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5870102581549281416}
-  - component: {fileID: 5959188590192355803}
-  - component: {fileID: 8985137338472807587}
   - component: {fileID: 2156402589058372077}
   - component: {fileID: 8261365980197149013}
   - component: {fileID: 6838688595831197604}
@@ -93,51 +89,6 @@ Transform:
   m_Father: {fileID: 2528634968407814236}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5959188590192355803
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6929454737726179924}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8985137338472807587
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6929454737726179924}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 30a22f061705f8a49a8edf1aad81f30b, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!135 &2156402589058372077
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -185,6 +136,12 @@ MonoBehaviour:
     type: 3}
   endItemPrefab: {fileID: 8365719098395412596, guid: 43e2fb1e45d812c488ef58b650fa6f85,
     type: 3}
+  models:
+  - {fileID: 8615078705407294376, guid: 7c5bdb3bd40b9614cb4c5bad4898ce2f, type: 3}
+  - {fileID: 2431658674410116525, guid: 699b38c0dd8ba22419bb678d4b0331af, type: 3}
+  - {fileID: 6982108533138182024, guid: d182925f6b08520448123be613c35fb0, type: 3}
+  - {fileID: 2366892455917036839, guid: 32a16cc720d60ca44a06c6bad57c119b, type: 3}
+  - {fileID: 2711027809890304071, guid: 8f378ff4adf17f3449375ac44822df16, type: 3}
   isAnchor: 1
 --- !u!59 &8255013444320541151
 HingeJoint:
@@ -306,6 +263,16 @@ PrefabInstance:
       propertyPath: attachable
       value: 
       objectReference: {fileID: 6763054442039843802}
+    - target: {fileID: 2707392224506940112, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: isAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707392224506940112, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachAnchor
+      value: 
+      objectReference: {fileID: 6763054442039843802}
     - target: {fileID: 3544497123182480417, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: connectionPoint
@@ -392,6 +359,16 @@ PrefabInstance:
       propertyPath: attachable
       value: 
       objectReference: {fileID: 6763054442039843802}
+    - target: {fileID: 3941299494372345424, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: isAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941299494372345424, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachAnchor
+      value: 
+      objectReference: {fileID: 6763054442039843802}
     - target: {fileID: 4748822525881889444, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: connectionPoint
@@ -470,6 +447,16 @@ PrefabInstance:
       propertyPath: attachable
       value: 
       objectReference: {fileID: 6763054442039843802}
+    - target: {fileID: 7761312725759295262, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: isAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761312725759295262, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachAnchor
+      value: 
+      objectReference: {fileID: 6763054442039843802}
     - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: connectionPoint
@@ -494,6 +481,16 @@ PrefabInstance:
     - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: attachable
+      value: 
+      objectReference: {fileID: 6763054442039843802}
+    - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: isAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachAnchor
       value: 
       objectReference: {fileID: 6763054442039843802}
     m_RemovedComponents: []
