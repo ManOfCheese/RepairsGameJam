@@ -485,6 +485,11 @@ PrefabInstance:
       propertyPath: attachable
       value: 
       objectReference: {fileID: 4701112689023365721}
+    - target: {fileID: 2707392224506940112, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachStick
+      value: 
+      objectReference: {fileID: 4701112689023365721}
     - target: {fileID: 3704567756925321009, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -640,6 +645,11 @@ PrefabInstance:
       propertyPath: attachable
       value: 
       objectReference: {fileID: 4701112689023365721}
+    - target: {fileID: 7761312725759295262, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachStick
+      value: 
+      objectReference: {fileID: 4701112689023365721}
     - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: stick
@@ -658,6 +668,11 @@ PrefabInstance:
     - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: attachable
+      value: 
+      objectReference: {fileID: 4701112689023365721}
+    - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachStick
       value: 
       objectReference: {fileID: 4701112689023365721}
     m_RemovedComponents: []
