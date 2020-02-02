@@ -5,6 +5,20 @@ using UnityEngine.Audio;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] private SceneManager_GGJ SceneManager_;
+    public SceneManager_GGJ GetSceneManager()
+    {
+        if (SceneManager_ == null)
+        {
+            SceneManager_ = GetComponent<SceneManager_GGJ>();
+            if (SceneManager_ == null)
+            {
+                SceneManager_ = gameObject.AddComponent<SceneManager_GGJ>();
+            }
+        }
+        return SceneManager_;
+    }
+
     public enum Buttons
     {
         Play,
@@ -14,7 +28,9 @@ public class Menu : MonoBehaviour
         Sound_Master,
         Sound_Music,
         Sound_Effects,
-        Back
+        Back,
+        Previous,
+        Next
     }
 
     public Buttons SelectedButton;
@@ -31,8 +47,16 @@ public class Menu : MonoBehaviour
     [Header("Audio")]
     public AudioMixer AudioMixer;
 
+    [Header("TutorialMenu")]
+    public GameObject TutorialMenu;
+    public GameObject Slides;
+    [SerializeField] private List<Transform> SlideList;
+    public float SlideOffset = 1f;
+    public int CurrentSlide = 0;
+
     private void Start()
     {
+        InitSlides();
         ShowSubMenu(SubMenu.Main);
     }
 
@@ -72,6 +96,12 @@ public class Menu : MonoBehaviour
                         case Buttons.Back:
                             Back();
                             break;
+                        case Buttons.Previous:
+                            Previous();
+                            break;
+                        case Buttons.Next:
+                            Next();
+                            break;
                         default:
                             break;
                     }
@@ -85,10 +115,12 @@ public class Menu : MonoBehaviour
     public void Play()
     {
         Debug.Log("Play");
+        GetSceneManager().NextScene();
     }
     public void Tutorial()
     {
         Debug.Log("Tutorial");
+        ShowSubMenu(SubMenu.Tutorial);
     }
     public void Options()
     {
@@ -108,8 +140,8 @@ public class Menu : MonoBehaviour
         Debug.Log("ToggleSoundMaster");
         if (buttonComponent.CheckMark != null)
         {
-            buttonComponent.CheckMark.SetActive(!buttonComponent.CheckMark.activeInHierarchy);
             bool newState = !buttonComponent.CheckMark.activeInHierarchy;
+            buttonComponent.CheckMark.SetActive(newState);
             if (AudioMixer != null)
             {
                 AudioMixer.SetFloat("Master", 
@@ -123,7 +155,7 @@ public class Menu : MonoBehaviour
         if (buttonComponent.CheckMark != null)
         {
             bool newState = !buttonComponent.CheckMark.activeInHierarchy;
-            buttonComponent.CheckMark.SetActive(!buttonComponent.CheckMark.activeInHierarchy);
+            buttonComponent.CheckMark.SetActive(newState);
             if (AudioMixer  != null)
             {
                 AudioMixer.SetFloat("Music",
@@ -142,7 +174,7 @@ public class Menu : MonoBehaviour
             {
                 AudioMixer.SetFloat("SFX",
                     newState ? 0f : -80f);
-                AudioMixer.SetFloat("`Background",
+                AudioMixer.SetFloat("Background",
                     newState ? 0f : -80f);
                 AudioMixer.SetFloat("Objects",
                     newState ? 0f : -80f);
@@ -155,13 +187,47 @@ public class Menu : MonoBehaviour
         ShowSubMenu(SubMenu.Main);
     }
     #endregion
+
+    #region Tutorial Menu
+    public void Previous()
+    {
+        if (CurrentSlide <= 0)
+        {
+            Debug.Log("Already at first slide");
+            return;
+        }
+        Debug.Log("Previous");
+        CurrentSlide--;
+        foreach (Transform slide in SlideList)
+        {
+            slide.transform.localPosition = slide.transform.localPosition + new Vector3(SlideOffset, 0f, 0f);
+        }
+    }
+
+    public void Next()
+    {
+        if (CurrentSlide >= SlideList.Count - 1)
+        {
+            Debug.Log("Already at last slide");
+            return;
+        }
+        Debug.Log("Next");
+        CurrentSlide++;
+        foreach (Transform slide in SlideList)
+        {
+            slide.transform.localPosition = slide.transform.localPosition + new Vector3(-SlideOffset, 0f, 0f);
+        }
+
+    }
+    #endregion
     #endregion
 
     #region Additional menu functions
     public enum SubMenu
     {
         Main,
-        Options
+        Options,
+        Tutorial
     }
     public void ShowSubMenu(SubMenu subMenu)
     {
@@ -185,8 +251,41 @@ public class Menu : MonoBehaviour
         {
             FirstMenuParent.gameObject.SetActive(subMenu == SubMenu.Main);
             SecondMenuParent.gameObject.SetActive(subMenu == SubMenu.Options);
+            TutorialMenu.SetActive(subMenu == SubMenu.Tutorial);
+            foreach (WorldspaceButton button in TutorialMenu.GetComponentsInChildren<WorldspaceButton>())
+            {
+                button.GetComponent<Collider>().enabled = subMenu == SubMenu.Tutorial;
+            }
+        }
+    }
+
+    public void InitSlides()
+    {
+        if (TutorialMenu == null)
+        {
+            Debug.LogError("Tutorial menu not found");
+            return;
+        }
+        if (Slides == null)
+        {
+            Debug.LogError("Slides not found");
+            return;
         }
 
+        CurrentSlide = 0;
+
+        foreach (Transform slide in Slides.GetComponentsInChildren<Transform>())
+        {
+            SlideList.Add(slide);
+            Debug.Log("Adding slide", slide);
+        }
+        SlideList.RemoveAt(0);
+        for (int i = 0; i < SlideList.Count; i++)
+        {
+            Transform slide = SlideList[i];
+            Debug.Log("Initiating slide with offset " + SlideOffset, slide);
+            slide.localPosition = new Vector3(Slides.transform.localPosition.x + SlideOffset * i, 0f, 0f);
+        }
     }
     #endregion
 }
