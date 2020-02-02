@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelList:
   - LevelName: Level 1
-    Mission: 
+    Mission: " \u2018Hello, fellow human. I human person, want a new human arm with
+      a human hand. Am human I, yes.\u2019"
     StickRequirement: 3
     EndItemRequirement: 2
-    JointRequirement: 0
+    JointRequirement: 2
   - LevelName: Level 2
     Mission: 
     StickRequirement: 4
