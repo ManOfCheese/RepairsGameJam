@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!135 &3129465031722919551
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715453870631441512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0, y: -2, z: 0}
 --- !u!1 &4819866649841131596
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +129,6 @@ MonoBehaviour:
     type: 3}
   hingeJointPrefab: {fileID: 5163698669083173873, guid: ec98eeca16c33434aadd811aecad0e70,
     type: 3}
-  stickPrefab: {fileID: 5725125534136679466}
 --- !u!1001 &2079165350525174100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -473,6 +485,11 @@ PrefabInstance:
       propertyPath: attachable
       value: 
       objectReference: {fileID: 4701112689023365721}
+    - target: {fileID: 2707392224506940112, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachStick
+      value: 
+      objectReference: {fileID: 4701112689023365721}
     - target: {fileID: 3704567756925321009, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -628,6 +645,11 @@ PrefabInstance:
       propertyPath: attachable
       value: 
       objectReference: {fileID: 4701112689023365721}
+    - target: {fileID: 7761312725759295262, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachStick
+      value: 
+      objectReference: {fileID: 4701112689023365721}
     - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: stick
@@ -646,6 +668,11 @@ PrefabInstance:
     - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
         type: 3}
       propertyPath: attachable
+      value: 
+      objectReference: {fileID: 4701112689023365721}
+    - target: {fileID: 7968514108935618418, guid: abea19064e93edb4887c7f3c31c092e2,
+        type: 3}
+      propertyPath: attachStick
       value: 
       objectReference: {fileID: 4701112689023365721}
     m_RemovedComponents: []

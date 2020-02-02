@@ -10,32 +10,34 @@ public class AttachToAnchor : AAttachable {
 	//Prefabs
 	public GameObject fixedJointPrefab;
 	public GameObject hingeJointPrefab;
-	public GameObject stickPrefab;
 
 	private GameObject playField;
 	private float jointOffset = 2f;
 
-	private void Awake() {
+	public override void Attach( DirectionalArrow arrow, Transform arrowTransform, Jonko joint ) {
 		playField = FindObjectOfType<PlayField>().gameObject;
-	}
-
-	public override void Attach( DirectionalArrow arrow, Transform arrowTransform ) {
-		GameObject newStick = Instantiate( stickPrefab, playField.transform );
+		GameObject newStick = Instantiate( Resources.Load( "Stick", typeof( GameObject ) ) as GameObject, playField.transform );
 		float halfObjectLength = newStick.GetComponent<AttachToStick>().stick.GetComponent<MeshRenderer>().bounds.extents.y;
 
 		newStick.transform.rotation = arrowTransform.rotation;
 		Vector3 normalizedDir = ( arrowTransform.position - transform.position ).normalized;
 		Vector3 dir1or0 = new Vector3( Mathf.RoundToInt( normalizedDir.x ), Mathf.RoundToInt( normalizedDir.y ), 0 );
 		newStick.transform.position = anchor.transform.position + ( dir1or0 * jointOffset );
-		if ( anchor.GetComponent<FixedJoint>() ){
-			anchor.GetComponent<FixedJoint>().connectedBody = newStick.GetComponentInChildren<Rigidbody>();
-			anchor.GetComponent<FixedJoint>().connectedAnchor = new Vector3( 0, 2, 0 );
+		if ( joint != null ) {
+			HingeJoint newHingeJoint = joint.gameObject.AddComponent<HingeJoint>();
+			newHingeJoint.connectedBody = newStick.GetComponent<Rigidbody>();
 		}
-		else if ( anchor.GetComponent<HingeJoint>() ) {
-			anchor.GetComponent<HingeJoint>().connectedBody = newStick.GetComponentInChildren<Rigidbody>();
-			anchor.GetComponent<HingeJoint>().connectedAnchor = new Vector3( 0, 2, 0 );
+		else {
+			if ( anchor.GetComponent<FixedJoint>() ) {
+				anchor.GetComponent<FixedJoint>().connectedBody = newStick.GetComponentInChildren<Rigidbody>();
+				anchor.GetComponent<FixedJoint>().connectedAnchor = new Vector3( 0, 2, 0 );
+			}
+			else if ( anchor.GetComponent<HingeJoint>() ) {
+				anchor.GetComponent<HingeJoint>().connectedBody = newStick.GetComponentInChildren<Rigidbody>();
+				anchor.GetComponent<HingeJoint>().connectedAnchor = new Vector3( 0, 2, 0 );
+			}
 		}
-		base.Attach( arrow, arrowTransform );
+		base.Attach( arrow, arrowTransform, joint );
 	}
 
 	private void Update() {

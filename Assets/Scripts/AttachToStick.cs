@@ -16,21 +16,18 @@ public class AttachToStick : AAttachable {
 	private float jointOffset = 2f;
 	private GameObject playField;
 
-	private void Awake() {
+	public override void Attach( DirectionalArrow arrow, Transform arrowTransform, Jonko joint ) {
 		playField = FindObjectOfType<PlayField>().gameObject;
-	}
+		GameObject newStick = Instantiate( Resources.Load("JointAndStick", typeof( GameObject ) ) as GameObject , playField.transform );
 
-	public override void Attach( DirectionalArrow arrow, Transform arrowTransform ) {
-		GameObject newStickAndJoint = Instantiate( Resources.Load("JointAndStick", typeof( GameObject ) ) as GameObject , playField.transform );
-
-		newStickAndJoint.transform.rotation = arrow.gameObject.transform.rotation;
+		newStick.transform.rotation = arrow.gameObject.transform.rotation;
 		Vector3 normalizedDir = ( arrowTransform.position - transform.position ).normalized;
 		Vector3 dir1or0 = new Vector3( Mathf.RoundToInt( normalizedDir.x ), Mathf.RoundToInt( normalizedDir.y ), 0 );
-		newStickAndJoint.transform.position = stick.transform.position + ( dir1or0 * jointOffset );
+		newStick.transform.position = stick.transform.position + ( dir1or0 * jointOffset );
 
 		stick.AddFixedJoint();
-		stick.ConnectRigidBody( newStickAndJoint.transform.Find("HingeJoint").GetComponent<Rigidbody>() );
-		base.Attach( arrow, arrowTransform );
+		stick.ConnectRigidBody( newStick.transform.Find("HingeJoint").GetComponent<Rigidbody>() );
+		base.Attach( arrow, arrowTransform, joint );
 		createEndItem.visible = false;
 		createEndItem.ApplyVisibility();
 	}
