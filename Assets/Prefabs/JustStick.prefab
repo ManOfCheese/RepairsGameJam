@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2656652913573830235}
   - component: {fileID: 2084698831020243758}
   - component: {fileID: 8080773761482541879}
+  - component: {fileID: 4301621965045771811}
   m_Layer: 0
   m_Name: JustStick
   m_TagString: Untagged
@@ -127,7 +128,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   createEndItem: {fileID: 0}
-  scoreTally: {fileID: 0}
   models:
   - {fileID: 170282685961945138, guid: a4dfe7893bab80c488c79490adc3cdad, type: 3}
   - {fileID: 340211636170794165, guid: 1d62f56ba0dc7a34f8f1cba9664d0b4a, type: 3}
@@ -135,3 +135,16 @@ MonoBehaviour:
   - {fileID: 5453172354316498863, guid: f030a583db57a644fb0c1531a7c60755, type: 3}
   - {fileID: 7545314245052295566, guid: 42d000eff09e34747b7bc768093e1206, type: 3}
   - {fileID: 88665786358736192, guid: e176f2aa39150a5419e245aea49353ca, type: 3}
+--- !u!135 &4301621965045771811
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798309119098672444}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0, y: -2, z: 0}

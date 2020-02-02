@@ -66,4 +66,11 @@ public class Stick : ADeletable {
 			}
 		}
 	}
+
+	private void OnTriggerEnter( Collider other ) {
+		if ( other.GetComponent<Jonko>() ) {
+			AddFixedJoint();
+			ConnectRigidBody( other.GetComponent<Rigidbody>() );
+		}
+	}
 }
