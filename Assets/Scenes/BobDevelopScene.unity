@@ -1795,11 +1795,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 638900097809122785, guid: e5e46510059f0674cbd529b74bbc3dac,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: m_PlayAutomatically
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 28244529f1b161f41862c37cadaf9b11, type: 2}
     - target: {fileID: 4260101383831863738, guid: e5e46510059f0674cbd529b74bbc3dac,
         type: 3}
       propertyPath: m_Layer
@@ -1890,16 +1897,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7339216728905894967, guid: e5e46510059f0674cbd529b74bbc3dac,
-        type: 3}
-      propertyPath: m_PlayAutomatically
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7339216728905894967, guid: e5e46510059f0674cbd529b74bbc3dac,
-        type: 3}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 7400000, guid: 28244529f1b161f41862c37cadaf9b11, type: 2}
     - target: {fileID: 8067592740451941858, guid: e5e46510059f0674cbd529b74bbc3dac,
         type: 3}
       propertyPath: m_IsActive
@@ -1965,9 +1962,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 638900097809122785, guid: e5e46510059f0674cbd529b74bbc3dac, type: 3}
-    - {fileID: 7339216728905894967, guid: e5e46510059f0674cbd529b74bbc3dac, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5e46510059f0674cbd529b74bbc3dac, type: 3}
 --- !u!1 &939047021 stripped
 GameObject:
@@ -2249,7 +2244,7 @@ Animator:
   m_GameObject: {fileID: 1002445203}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 34e18b0e06c01714fa98341aab349e43, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4010,12 +4005,23 @@ PrefabInstance:
         type: 3}
       propertyPath: FirstMenuParent
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 892046887}
     - target: {fileID: 8000551279888205652, guid: 48efdf4e467c56745b169fc95e75aed2,
         type: 3}
       propertyPath: SecondMenuParent
       value: 
+      objectReference: {fileID: 1002445204}
+    - target: {fileID: 8000551279888205652, guid: 48efdf4e467c56745b169fc95e75aed2,
+        type: 3}
+      propertyPath: AnimateMenuTransitions
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8000551279888205652, guid: 48efdf4e467c56745b169fc95e75aed2,
+        type: 3}
+      propertyPath: AudioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 65e32341eb6a0d34081b7c18b1cc0611,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48efdf4e467c56745b169fc95e75aed2, type: 3}
 --- !u!114 &4394628727647922622 stripped

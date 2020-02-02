@@ -1628,7 +1628,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2167779404577860586, guid: e7d1bc7f2c7795149820ccba97ed84aa, type: 3}
+    - {fileID: 8291840608598696508, guid: e7d1bc7f2c7795149820ccba97ed84aa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e7d1bc7f2c7795149820ccba97ed84aa, type: 3}
 --- !u!4 &4260101383832034776 stripped
 Transform:

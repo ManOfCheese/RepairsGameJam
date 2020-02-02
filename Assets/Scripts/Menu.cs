@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Menu : MonoBehaviour
 {
@@ -19,10 +20,16 @@ public class Menu : MonoBehaviour
     public Buttons SelectedButton;
     public LayerMask MenuLayer;
 
+    [Header("Animations")]
+    public bool AnimateMenuTransitions;
+    [Space]
     public Animator FirstMenuParent;
     public List<WorldspaceButton> FirstMenu;
     public Animator SecondMenuParent;
     public List<WorldspaceButton> SecondMenu;
+
+    [Header("Audio")]
+    public AudioMixer AudioMixer;
 
     private void Start()
     {
@@ -91,6 +98,7 @@ public class Menu : MonoBehaviour
     public void Exit()
     {
         Debug.Log("Exit");
+        Application.Quit(0);
     }
     #endregion
 
@@ -98,17 +106,48 @@ public class Menu : MonoBehaviour
     public void SoundMaster(WorldspaceButton buttonComponent)
     {
         Debug.Log("ToggleSoundMaster");
-        if (buttonComponent.CheckMark != null) buttonComponent.CheckMark.SetActive(!buttonComponent.CheckMark.activeInHierarchy);
+        if (buttonComponent.CheckMark != null)
+        {
+            buttonComponent.CheckMark.SetActive(!buttonComponent.CheckMark.activeInHierarchy);
+            bool newState = !buttonComponent.CheckMark.activeInHierarchy;
+            if (AudioMixer != null)
+            {
+                AudioMixer.SetFloat("Master", 
+                    newState? 0f : -80f);
+            }
+        }
     }
     public void SoundMusic(WorldspaceButton buttonComponent)
     {
         Debug.Log("ToggleSoundMusic");
-        if (buttonComponent.CheckMark != null) buttonComponent.CheckMark.SetActive(!buttonComponent.CheckMark.activeInHierarchy);
+        if (buttonComponent.CheckMark != null)
+        {
+            bool newState = !buttonComponent.CheckMark.activeInHierarchy;
+            buttonComponent.CheckMark.SetActive(!buttonComponent.CheckMark.activeInHierarchy);
+            if (AudioMixer  != null)
+            {
+                AudioMixer.SetFloat("Music",
+                    newState ? 0f : -80f);
+            }
+        }
     }
     public void SoundEffects(WorldspaceButton buttonComponent)
     {
         Debug.Log("ToggleSoundEffects");
-        if (buttonComponent.CheckMark != null) buttonComponent.CheckMark.SetActive(!buttonComponent.CheckMark.activeInHierarchy);
+        if (buttonComponent.CheckMark != null)
+        {
+            bool newState = !buttonComponent.CheckMark.activeInHierarchy;
+            buttonComponent.CheckMark.SetActive(newState);
+            if (AudioMixer != null)
+            {
+                AudioMixer.SetFloat("SFX",
+                    newState ? 0f : -80f);
+                AudioMixer.SetFloat("`Background",
+                    newState ? 0f : -80f);
+                AudioMixer.SetFloat("Objects",
+                    newState ? 0f : -80f);
+            }
+        }
     }
     public void Back()
     {
@@ -134,17 +173,18 @@ public class Menu : MonoBehaviour
         {
             button.GetComponent<Collider>().enabled = subMenu == SubMenu.Options;
         }
-        if (subMenu == SubMenu.Main)
+        if (AnimateMenuTransitions)
         {
-            FirstMenuParent.Play("Text_Up");
-            SecondMenuParent.Play("Text_Down");
-            SecondMenuParent.Play();
-        } 
-        else if (subMenu == SubMenu.Options)
+            Debug.LogError("Menu animations not implemented");
+            FirstMenuParent.gameObject.SetActive(true);
+            SecondMenuParent.gameObject.SetActive(true);
+            FirstMenuParent.SetBool(0, subMenu == SubMenu.Main);
+            SecondMenuParent.SetBool(0, subMenu == SubMenu.Options);
+        }
+        else
         {
-            FirstMenuParent.Play();
-            //FirstMenuParent.Play("Text_Up");
-            //SecondMenuParent.Play("Text_Down");
+            FirstMenuParent.gameObject.SetActive(subMenu == SubMenu.Main);
+            SecondMenuParent.gameObject.SetActive(subMenu == SubMenu.Options);
         }
 
     }
