@@ -12,10 +12,15 @@ public class AttachToAnchor : AAttachable {
 	public GameObject hingeJointPrefab;
 	public GameObject stickPrefab;
 
+	private GameObject playField;
 	private float jointOffset = 2f;
 
+	private void Awake() {
+		playField = FindObjectOfType<PlayField>().gameObject;
+	}
+
 	public override void Attach( DirectionalArrow arrow, Transform arrowTransform ) {
-		GameObject newStick = Instantiate( stickPrefab );
+		GameObject newStick = Instantiate( stickPrefab, playField.transform );
 		float halfObjectLength = newStick.GetComponent<AttachToStick>().stick.GetComponent<MeshRenderer>().bounds.extents.y;
 
 		newStick.transform.rotation = arrowTransform.rotation;
@@ -38,7 +43,8 @@ public class AttachToAnchor : AAttachable {
 			if ( GetComponentInChildren<FixedJoint>().connectedBody == null ) {
 				foreach ( DirectionalArrow arrow in arrows ) {
 					if ( Physics.OverlapBox( arrow.transform.position, new Vector3( 0.2f, 0.2f, 0.2f ) ).Length <= 0 ) {
-						arrow.gameObject.SetActive( true );
+						arrow.visible = true;
+						arrow.ApplyVisibility();
 					}
 				}
 			}
@@ -47,7 +53,8 @@ public class AttachToAnchor : AAttachable {
 			if ( GetComponentInChildren<HingeJoint>().connectedBody == null ) {
 				foreach ( DirectionalArrow arrow in arrows ) {
 					if ( Physics.OverlapBox( arrow.transform.position, new Vector3( 0.1f, 0.1f, 0.1f ) ).Length <= 0 ) {
-						arrow.gameObject.SetActive( true );
+						arrow.visible = true;
+						arrow.ApplyVisibility();
 					}
 				}
 			}

@@ -127,6 +127,7 @@ MonoBehaviour:
   - {fileID: 6331093170840725192}
   - {fileID: 1872267771004392198}
   createEndItem: {fileID: 4819866649841131596}
+  scoreTally: {fileID: 0}
 --- !u!1 &4819866649841131596
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +236,7 @@ MonoBehaviour:
   endItemPrefab: {fileID: 8365719098395412596, guid: 43e2fb1e45d812c488ef58b650fa6f85,
     type: 3}
   arrows: {fileID: 6248157451068640625}
+  visible: 0
 --- !u!1 &5725125534136679466
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88bd49bcdb381ae4eb09536519d2a36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createEndItem: {fileID: 4819866649841131596}
+  createEndItem: {fileID: 3257378740599337434}
   stick: {fileID: 1878951194496242006}
   fixedJointPrefab: {fileID: 5163698669083173873, guid: 98f9eb28d664b004c976018030bfb3f6,
     type: 3}

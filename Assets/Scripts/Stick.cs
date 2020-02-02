@@ -6,9 +6,22 @@ public class Stick : ADeletable {
 
 	public List<DirectionalArrow> arrows;
 	public GameObject createEndItem;
+	public ScoreTally scoreTally;
 
 	private FixedJoint fixedJoint;
 	private bool hasFixedJoint;
+
+	private void Awake() {
+		scoreTally = FindObjectOfType<ScoreTally>();
+	}
+
+	private void OnEnable() {
+		scoreTally.AddStick( this.gameObject );
+	}
+
+	private void OnDisable() {
+		scoreTally.RemoveStick( this.gameObject );
+	}
 
 	public void AddFixedJoint() {
 		fixedJoint = gameObject.AddComponent<FixedJoint>();

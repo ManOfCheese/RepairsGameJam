@@ -70,6 +70,9 @@ public class ScoreTally : MonoBehaviour
         //CheckStickRequirementMet();
         CheckAllRequirements();
     }
+	public List<GameObject> GetStickList() {
+		return Sticks;
+	}
     public bool CheckStickRequirementMet()
     {
         StickReqMet = Sticks.Count >= CurrentLevel.StickRequirement;
@@ -102,7 +105,10 @@ public class ScoreTally : MonoBehaviour
         //CheckEndItemRequirementMet();
         CheckAllRequirements();
     }
-    public bool CheckEndItemRequirementMet()
+	public List<EndItem> GetEndItemList() {
+		return EndItems;
+	}
+	public bool CheckEndItemRequirementMet()
     {
         EndItemReqMet = EndItems.Count >= CurrentLevel.EndItemRequirement;
         if (EndItemProgressText != null)
@@ -134,7 +140,10 @@ public class ScoreTally : MonoBehaviour
         //CheckConnectionJointRequirementMet();
         CheckAllRequirements();
     }
-    public bool CheckConnectionJointRequirementMet()
+	public List<Jonko> GetJointList() {
+		return Joints;
+	}
+	public bool CheckConnectionJointRequirementMet()
     {
         JointReqMet = Joints.Count >= CurrentLevel.JointRequirement;
         if (JointProgressText != null)
