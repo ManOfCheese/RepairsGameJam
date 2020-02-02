@@ -51,6 +51,17 @@ public class Jonko : ADeletable {
 		}
 	}
 
+	private void Update() {
+		if ( GetComponent<FixedJoint>() ) {
+			HingeJoint[] joints = GetComponents<HingeJoint>();
+			for ( int i = 0; i < joints.Length; i++ ) {
+				if ( joints[ i ].connectedBody == null ) {
+					Destroy( GetComponent<HingeJoint>() );
+				}
+			}
+		}
+	}
+
 	public override void Delete() {
 		if ( !GetComponent<HingeJoint>() ) {
 			Destroy( transform.parent.gameObject );

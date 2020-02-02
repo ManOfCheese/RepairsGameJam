@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DirectionalArrow : AClickable {
 
-	public AAttachable attachable;
+	public AAttachable attachStick;
+	public AAttachable attachAnchor;
 	public bool visible;
+	public bool isAnchor;
 
 	private ClickFunctionsStateMachine stateMachine;
 
@@ -34,6 +36,22 @@ public class DirectionalArrow : AClickable {
 	}
 
 	public override void OnClick() {
-		attachable.Attach( this,  transform );
+		bool stickOnly = false;
+		if ( !isAnchor ) {
+			Collider[] colliders = Physics.OverlapSphere( transform.parent.transform.parent.transform.position, 0.2f );
+			for ( int i = 0; i < colliders.Length; i++ ) {
+				if ( colliders[ i ].GetComponent<Jonko>() ) {
+					attachStick.Attach( this, transform, colliders[ i ].GetComponent<Jonko>() );
+					stickOnly = true;
+					break;
+				}
+			}
+			if ( !stickOnly ) {
+				attachStick.Attach( this, transform, null );
+			}
+		}
+		else {
+			attachAnchor.Attach( this, transform, null );
+		}
 	}
 }
