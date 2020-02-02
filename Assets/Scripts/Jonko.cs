@@ -12,7 +12,24 @@ public class Jonko : ADeletable {
 	public GameObject fixedJointPrefab;
 	public GameObject hingeJointPrefab;
 	public GameObject endItemPrefab;
+	public ScoreTally scoreTally;
 	public bool isAnchor;
+
+	private void Awake() {
+		scoreTally = FindObjectOfType<ScoreTally>();
+	}
+
+	private void OnEnable() {
+		if ( !isAnchor ) {
+			scoreTally.AddConnectionJoint( this );
+		}
+	}
+
+	private void OnDisable() {
+		if ( !isAnchor ) {
+			scoreTally.RemoveConnectionJoint( this );
+		}
+	}
 
 	public void ConnectRigidBody( Rigidbody rigidBody ) {
 		GetComponent<HingeJoint>().connectedBody = rigidBody;
