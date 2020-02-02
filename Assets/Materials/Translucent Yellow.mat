@@ -74,6 +74,6 @@ Material:
     - _ZWrite: 1
     - _pulse_strength: 0
     m_Colors:
-    - _Bubble_Color: {r: 0.9433962, g: 0.918418, b: 0.022249907, a: 1}
+    - _Bubble_Color: {r: 0.5709772, g: 0.80962247, b: 0.8584906, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
