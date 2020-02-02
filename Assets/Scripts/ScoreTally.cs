@@ -195,7 +195,7 @@ public class ScoreTally : MonoBehaviour
     public Text StickProgressText;
     public Text EndItemProgressText;
     public Text JointProgressText;
-	public Text winText;
+	public GameObject winText;
 
     public Color ReqIncompleteColor = Color.red;
     public Color ReqCompleteColor = Color.green;
