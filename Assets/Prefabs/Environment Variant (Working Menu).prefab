@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0705add3c861576438800586916c322f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuInstance: {fileID: 0}
   MenuButton: 7
   CheckMark: {fileID: 0}
 --- !u!1 &564954649
@@ -258,15 +259,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564954649}
   m_LocalRotation: {x: 0.38400722, y: 0.07586567, z: -0.023883682, w: 0.9198981}
-  m_LocalPosition: {x: 0.062, y: 0.36, z: 3.058}
-  m_LocalScale: {x: 0.8313682, y: 0.46290955, z: 0.12437794}
+  m_LocalPosition: {x: -0.076500006, y: 0.36, z: -0.19869995}
+  m_LocalScale: {x: 0.8313683, y: 0.46290955, z: 0.12437796}
   m_Children:
   - {fileID: 474503466}
   - {fileID: 2140962661}
   - {fileID: 770479059}
   - {fileID: 309989616}
-  m_Father: {fileID: 3898725513607510500}
-  m_RootOrder: 6
+  m_Father: {fileID: 8107855852473275141}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 45.245003, y: 9.915001, z: 1.166}
 --- !u!33 &564954653
 MeshFilter:
@@ -430,6 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0705add3c861576438800586916c322f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuInstance: {fileID: 0}
   MenuButton: 9
   CheckMark: {fileID: 0}
 --- !u!1 &1557451804
@@ -720,6 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0705add3c861576438800586916c322f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuInstance: {fileID: 0}
   MenuButton: 8
   CheckMark: {fileID: 0}
 --- !u!95 &892046887
@@ -766,6 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0705add3c861576438800586916c322f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuInstance: {fileID: 0}
   MenuButton: 0
   CheckMark: {fileID: 0}
 --- !u!65 &939047033
@@ -793,6 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0705add3c861576438800586916c322f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuInstance: {fileID: 0}
   MenuButton: 1
   CheckMark: {fileID: 0}
 --- !u!65 &939047032
@@ -820,6 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0705add3c861576438800586916c322f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuInstance: {fileID: 0}
   MenuButton: 2
   CheckMark: {fileID: 0}
 --- !u!65 &939047031
@@ -847,6 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0705add3c861576438800586916c322f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuInstance: {fileID: 0}
   MenuButton: 3
   CheckMark: {fileID: 0}
 --- !u!95 &1002445204
@@ -893,6 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0705add3c861576438800586916c322f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuInstance: {fileID: 0}
   MenuButton: 4
   CheckMark: {fileID: 8107855852473044737}
 --- !u!65 &939047029
@@ -920,6 +928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0705add3c861576438800586916c322f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuInstance: {fileID: 0}
   MenuButton: 5
   CheckMark: {fileID: 8107855852473044739}
 --- !u!65 &939047028
@@ -947,6 +956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0705add3c861576438800586916c322f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuInstance: {fileID: 0}
   MenuButton: 6
   CheckMark: {fileID: 8107855852473044743}
 --- !u!65 &939047045
@@ -974,6 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0705add3c861576438800586916c322f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuInstance: {fileID: 0}
   MenuButton: 7
   CheckMark: {fileID: 0}
 --- !u!1001 &5447675855906574045
@@ -1148,7 +1159,7 @@ PrefabInstance:
     - target: {fileID: 9043516541250628377, guid: e5e46510059f0674cbd529b74bbc3dac,
         type: 3}
       propertyPath: m_Name
-      value: Environment
+      value: Environment Variant (Working Menu)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5e46510059f0674cbd529b74bbc3dac, type: 3}
@@ -1182,9 +1193,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5447675855906574045}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &3898725513607510500 stripped
+--- !u!4 &8107855852473275141 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 9043516541250533177, guid: e5e46510059f0674cbd529b74bbc3dac,
+  m_CorrespondingSourceObject: {fileID: 4260101383832034776, guid: e5e46510059f0674cbd529b74bbc3dac,
     type: 3}
   m_PrefabInstance: {fileID: 5447675855906574045}
   m_PrefabAsset: {fileID: 0}

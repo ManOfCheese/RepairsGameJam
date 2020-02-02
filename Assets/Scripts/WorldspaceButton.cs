@@ -6,6 +6,7 @@ using UnityEngine;
 public class WorldspaceButton : MonoBehaviour
 {
     public Menu.Buttons MenuButton;
+    public PauseMenu.ButtonFunctions PauseMenuButton;
 
     public GameObject CheckMark;
 }

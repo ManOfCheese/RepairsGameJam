@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 
 public class Menu : MonoBehaviour
 {
+    #region Variables
     [SerializeField] private SceneManager_GGJ SceneManager_;
     public SceneManager_GGJ GetSceneManager()
     {
@@ -30,7 +31,8 @@ public class Menu : MonoBehaviour
         Sound_Effects,
         Back,
         Previous,
-        Next
+        Next,
+        None
     }
 
     public Buttons SelectedButton;
@@ -53,62 +55,7 @@ public class Menu : MonoBehaviour
     [SerializeField] private List<Transform> SlideList;
     public float SlideOffset = 1f;
     public int CurrentSlide = 0;
-
-    private void Start()
-    {
-        InitSlides();
-        ShowSubMenu(SubMenu.Main);
-    }
-
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit, MenuLayer))
-            {
-                WorldspaceButton buttonComponent = hit.transform.GetComponent<WorldspaceButton>();
-                if (buttonComponent != null)
-                {
-                    switch (buttonComponent.MenuButton)
-                    {
-                        case Buttons.Play:
-                            Play();
-                            break;
-                        case Buttons.Tutorial:
-                            Tutorial();
-                            break;
-                        case Buttons.Options:
-                            Options();
-                            break;
-                        case Buttons.Exit:
-                            Exit();
-                            break;
-                        case Buttons.Sound_Master:
-                            SoundMaster(buttonComponent);
-                            break;
-                        case Buttons.Sound_Music:
-                            SoundMusic(buttonComponent);
-                            break;
-                        case Buttons.Sound_Effects:
-                            SoundEffects(buttonComponent);
-                            break;
-                        case Buttons.Back:
-                            Back();
-                            break;
-                        case Buttons.Previous:
-                            Previous();
-                            break;
-                        case Buttons.Next:
-                            Next();
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            }
-        }
-    }
+    #endregion
 
     #region Menu Functions
     #region FirstMenu
@@ -285,6 +232,64 @@ public class Menu : MonoBehaviour
             Transform slide = SlideList[i];
             Debug.Log("Initiating slide with offset " + SlideOffset, slide);
             slide.localPosition = new Vector3(Slides.transform.localPosition.x + SlideOffset * i, 0f, 0f);
+        }
+    }
+    #endregion
+
+    #region Unity Functions
+    private void Start()
+    {
+        InitSlides();
+        ShowSubMenu(SubMenu.Main);
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, MenuLayer))
+            {
+                WorldspaceButton buttonComponent = hit.transform.GetComponent<WorldspaceButton>();
+                if (buttonComponent != null)
+                {
+                    switch (buttonComponent.MenuButton)
+                    {
+                        case Buttons.Play:
+                            Play();
+                            break;
+                        case Buttons.Tutorial:
+                            Tutorial();
+                            break;
+                        case Buttons.Options:
+                            Options();
+                            break;
+                        case Buttons.Exit:
+                            Exit();
+                            break;
+                        case Buttons.Sound_Master:
+                            SoundMaster(buttonComponent);
+                            break;
+                        case Buttons.Sound_Music:
+                            SoundMusic(buttonComponent);
+                            break;
+                        case Buttons.Sound_Effects:
+                            SoundEffects(buttonComponent);
+                            break;
+                        case Buttons.Back:
+                            Back();
+                            break;
+                        case Buttons.Previous:
+                            Previous();
+                            break;
+                        case Buttons.Next:
+                            Next();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
         }
     }
     #endregion
