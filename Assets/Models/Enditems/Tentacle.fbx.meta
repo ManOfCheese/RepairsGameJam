@@ -4,12 +4,17 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Tentacle_Arm
     400000: //RootNode
+    400002: Tentacle_Arm
     2100000: mat_Glossy
     2100002: mat_Object
     2300000: //RootNode
+    2300002: Tentacle_Arm
     3300000: //RootNode
+    3300002: Tentacle_Arm
     4300000: Tentacle
+    4300002: Tentacle_Arm
   externalObjects:
   - first:
       type: UnityEngine:Material
