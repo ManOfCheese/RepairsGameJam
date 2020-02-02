@@ -12,7 +12,6 @@ public class AttachToStick : AAttachable {
 	//Prefabs
 	public GameObject fixedJointPrefab;
 	public GameObject hingeJointPrefab;
-	public GameObject stickPrefab;
 
 	private float jointOffset = 2f;
 	private GameObject playField;
@@ -22,7 +21,7 @@ public class AttachToStick : AAttachable {
 	}
 
 	public override void Attach( DirectionalArrow arrow, Transform arrowTransform ) {
-		GameObject newStickAndJoint = Instantiate( stickPrefab, playField.transform );
+		GameObject newStickAndJoint = Instantiate( Resources.Load("JointAndStick", typeof( GameObject ) ) as GameObject , playField.transform );
 
 		newStickAndJoint.transform.rotation = arrow.gameObject.transform.rotation;
 		Vector3 normalizedDir = ( arrowTransform.position - transform.position ).normalized;
