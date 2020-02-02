@@ -52,6 +52,10 @@ public class PlayButton : AClickable {
 				currentStickList[ i ].GetComponent<Rigidbody>().isKinematic = false;
 			}
 			physicsOn = true;
+
+			if ( scoreTally.LevelComplete ) {
+				scoreTally.Win();
+			}
 		}
 		else if ( physicsOn ) {
 			currentEndItemList = scoreTally.GetEndItemList();
