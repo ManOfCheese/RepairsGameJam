@@ -113,7 +113,7 @@ public class ScoreTally : MonoBehaviour
         EndItemReqMet = EndItems.Count >= CurrentLevel.EndItemRequirement;
         if (EndItemProgressText != null)
         {
-            EndItemProgressText.text = "Sticks: " + EndItems.Count + " / " + CurrentLevel.EndItemRequirement;
+            EndItemProgressText.text = "End Item: " + EndItems.Count + " / " + CurrentLevel.EndItemRequirement;
             if (EndItemReqMet)
             {
                 EndItemProgressText.color = ReqCompleteColor;
@@ -148,7 +148,7 @@ public class ScoreTally : MonoBehaviour
         JointReqMet = Joints.Count >= CurrentLevel.JointRequirement;
         if (JointProgressText != null)
         {
-            JointProgressText.text = "Sticks: " + Joints.Count + " / " + CurrentLevel.JointRequirement;
+            JointProgressText.text = "Joints: " + Joints.Count + " / " + CurrentLevel.JointRequirement;
             if (JointReqMet)
             {
                 JointProgressText.color = ReqCompleteColor;

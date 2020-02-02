@@ -10,7 +10,6 @@ public class AttachToAnchor : AAttachable {
 	//Prefabs
 	public GameObject fixedJointPrefab;
 	public GameObject hingeJointPrefab;
-	public GameObject stickPrefab;
 
 	private GameObject playField;
 	private float jointOffset = 2f;
@@ -20,7 +19,7 @@ public class AttachToAnchor : AAttachable {
 	}
 
 	public override void Attach( DirectionalArrow arrow, Transform arrowTransform ) {
-		GameObject newStick = Instantiate( stickPrefab, playField.transform );
+		GameObject newStick = Instantiate( Resources.Load( "Stick", typeof( GameObject ) ) as GameObject, playField.transform );
 		float halfObjectLength = newStick.GetComponent<AttachToStick>().stick.GetComponent<MeshRenderer>().bounds.extents.y;
 
 		newStick.transform.rotation = arrowTransform.rotation;
