@@ -16,15 +16,19 @@ public class Jonko : ADeletable {
 	public bool isAnchor;
 
 	private ScoreTally scoreTally;
+	private bool hasModel;
 
 	private void Awake() {
 		scoreTally = FindObjectOfType<ScoreTally>();
-		Instantiate( models[ Random.Range( 0, models.Count - 1 ) ], this.transform );
 	}
 
 	private void OnEnable() {
 		if ( !isAnchor ) {
 			scoreTally.AddConnectionJoint( this );
+		}
+		if ( transform.childCount == 0 ) {
+			Instantiate( models[ Random.Range( 0, models.Count - 1 ) ], this.transform );
+			hasModel = true;
 		}
 	}
 

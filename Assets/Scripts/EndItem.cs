@@ -10,16 +10,19 @@ public class EndItem : ADeletable {
 	public List<GameObject> models;
 
 	private ScoreTally scoreTally;
-
 	private float jointOffset = 1f;
+	private bool hasModel;
 
 	private void Awake() {
 		scoreTally = FindObjectOfType<ScoreTally>();
-		Instantiate( models[ Random.Range( 0, models.Count - 1 ) ], this.transform );
 	}
 
 	private void OnEnable() {
 		scoreTally.AddEndItem( this );
+		if ( transform.childCount == 0 ) {
+			Instantiate( models[ Random.Range( 0, models.Count - 1 ) ], this.transform );
+			hasModel = true;
+		}
 	}
 
 	private void OnDisable() {
@@ -27,7 +30,7 @@ public class EndItem : ADeletable {
 	}
 
 	private void Start() {
-        if (GetComponent<FixedJoint>() != null)
+		if (GetComponent<FixedJoint>() != null)
             GetComponent<FixedJoint>().connectedBody = attachedToStick;
 	}
 

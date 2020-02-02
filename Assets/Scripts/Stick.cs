@@ -11,14 +11,18 @@ public class Stick : ADeletable {
 	private ScoreTally scoreTally;
 	private FixedJoint fixedJoint;
 	private bool hasFixedJoint;
+	private bool hasModel;
 
 	private void Awake() {
 		scoreTally = FindObjectOfType<ScoreTally>();
-		Instantiate( models[ Random.Range( 0, models.Count - 1 ) ], this.transform );
 	}
 
 	private void OnEnable() {
 		scoreTally.AddStick( this.gameObject );
+		if ( transform.childCount == 0 ) {
+			Instantiate( models[ Random.Range( 0, models.Count - 1 ) ], this.transform );
+			hasModel = true;
+		}
 	}
 
 	private void OnDisable() {
