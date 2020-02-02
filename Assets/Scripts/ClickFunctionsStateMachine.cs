@@ -11,6 +11,8 @@ public class ClickFunctionsStateMachine : MonoBehaviour
     public Color ToggleEndPartColor = Color.white;
     public Color DeleteColor = Color.white;
     public Image ControlsBackground;
+	public List<DirectionalArrow> arrows;
+	public List<CreateEndItem> createEndItems;
     #endregion
 
     #region States
@@ -62,6 +64,9 @@ public class ClickFunctionsStateMachine : MonoBehaviour
 				if ( hit.transform.gameObject.GetComponent<DirectionalArrow>() ) {
 					hit.transform.gameObject.GetComponent<DirectionalArrow>().OnClick();
 				}
+				else if ( hit.transform.gameObject.GetComponent<PlayButton>() ) {
+					hit.transform.gameObject.GetComponent<PlayButton>().OnClick();
+				}
 			}
 		}
 	}
@@ -77,6 +82,9 @@ public class ClickFunctionsStateMachine : MonoBehaviour
 				if ( hit.transform.gameObject.GetComponent<Jonko>() ) {
 					hit.transform.gameObject.GetComponent<Jonko>().ToggleJoint();
 				}
+				else if ( hit.transform.gameObject.GetComponent<PlayButton>() ) {
+					hit.transform.gameObject.GetComponent<PlayButton>().OnClick();
+				}
 			}
 		}
 	}
@@ -91,6 +99,9 @@ public class ClickFunctionsStateMachine : MonoBehaviour
 			if ( Physics.Raycast( ray, out hit, 100.0f ) ) {
 				if ( hit.transform.gameObject.GetComponent<CreateEndItem>() ) {
 					hit.transform.gameObject.GetComponent<CreateEndItem>().OnClick();
+				}
+				else if ( hit.transform.gameObject.GetComponent<PlayButton>() ) {
+					hit.transform.gameObject.GetComponent<PlayButton>().OnClick();
 				}
 			}
 		}

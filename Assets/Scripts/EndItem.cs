@@ -8,8 +8,21 @@ public class EndItem : ADeletable {
 
 	public GameObject jointPrefab;
 	public GameObject arrows;
+	private ScoreTally scoreTally;
 
 	private float jointOffset = 1f;
+
+	private void Awake() {
+		scoreTally = FindObjectOfType<ScoreTally>();
+	}
+
+	private void OnEnable() {
+		scoreTally.AddEndItem( this );
+	}
+
+	private void OnDisable() {
+		scoreTally.RemoveEndItem( this );
+	}
 
 	private void Start() {
         if (GetComponent<FixedJoint>() != null)

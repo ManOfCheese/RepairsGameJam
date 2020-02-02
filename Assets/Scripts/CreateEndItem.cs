@@ -7,8 +7,34 @@ public class CreateEndItem : AClickable {
 	public Stick stick;
 	public GameObject endItemPrefab;
 	public GameObject arrows;
+	public bool visible;
 
+	private ClickFunctionsStateMachine stateMachine;
 	private float jointOffset = 2f;
+
+	private void Awake() {
+		stateMachine = FindObjectOfType<ClickFunctionsStateMachine>();
+		stateMachine.createEndItems.Add( this );
+		if ( enabled ) {
+			visible = true;
+		}
+		else {
+			visible = false;
+		}
+	}
+
+	private void OnDestroy() {
+		stateMachine.createEndItems.Remove( this );
+	}
+
+	public void ApplyVisibility() {
+		if ( visible ) {
+			gameObject.SetActive( true );
+		}
+		else {
+			gameObject.SetActive( false );
+		}
+	}
 
 	public override void OnClick() {
 		GameObject newEndItem = Instantiate( endItemPrefab );
